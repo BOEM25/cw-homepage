@@ -35,13 +35,8 @@ const Footer = class extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
+                      <Link className="navbar-item" to="/workshops">
+                        Workshops
                       </Link>
                     </li>
                     <li>
@@ -74,14 +69,14 @@ const Footer = class extends React.Component {
                 </section>
               </div>
               <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
+                <a title="facebook" href="https://facebook.com/workshopcode">
                   <img
                     src={facebook}
                     alt="Facebook"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="twitter" href="https://twitter.com">
+                <a title="twitter" href="https://twitter.com/workshopcode">
                   <img
                     className="fas fa-lg"
                     src={twitter}
@@ -89,17 +84,17 @@ const Footer = class extends React.Component {
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="instagram" href="https://instagram.com">
+                <a title="instagram" href="https://instagram.com/codeworkshop">
                   <img
                     src={instagram}
                     alt="Instagram"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
-                <a title="vimeo" href="https://vimeo.com">
+                <a title="youtube" href="https://www.youtube.com/channel/UC27DIahQvIOJHnQwpJmH0LA">
                   <img
                     src={vimeo}
-                    alt="Vimeo"
+                    alt="Youtube"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>
