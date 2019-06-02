@@ -177,8 +177,6 @@ export const productPageQuery = graphql`
             }
             text
           }
-          heading
-          description
         }
         main {
           heading
@@ -228,12 +226,6 @@ export const productPageQuery = graphql`
         pricing {
           heading
           description
-          plans {
-            description
-            items
-            plan
-            price
-          }
         }
       }
     }
