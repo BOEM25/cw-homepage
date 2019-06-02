@@ -3,17 +3,26 @@ templateKey: 'about-page'
 path: /about
 title: About our values
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+### Friendly and Fun
+Every Code Workshop event is a chance to have fun and explore. Building a great friendly community
+is one of our core values and we will always strive for a fun and friendly atmosphere.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+### Inclusive
+People from all walks of life, careers, and backgrounds are welcome to join us at our events.
+We want to make programming as open and accessible to as many people as possible, and never be
+exclusionary.
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+### High Quality Content
+Every workshop we host aims to be a fully developed and rewarding experience. Our goal
+it to teach high quality coding practices and ideas that are as applicable to beginners
+as they are to seasoned professionals. Every event is designed around a curriculum designed
+to teach concepts clearly and correctly.
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+### Engaging and Participatory
+We believe that doing is learning. We minimize the amount of lecture time at our events and
+instead focus on interactive exercises and participation. Each event will have clear learning goals,
+and facilitators available to help with any questions that you may have and to provide guidance.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+### Open Source
+As members of the software community we stand on the shoulders of many amazing open source software
+projects, and a core value of our organization is to promote the usage of and contribution to open source software projects.
