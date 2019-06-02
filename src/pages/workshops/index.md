@@ -3,99 +3,60 @@ templateKey: 'product-page'
 path: /workshops
 title: Our Workshops
 image: /img/jumbotron.jpg
-heading: Great coffee with a conscience
+heading: Our events
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  We host a variety of different events designed to cover a range of topics in 
+  the software development world. Check out some of our upcoming events to
+  find something that peaks your interest or seems like a topic you would like
+  to know more about.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/bot.jpg
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
-    - image: /img/coffee-gear.png
+        Code meets the real world when we run code on bots, drones, and the internet of things. What does this mean, what can we do with it, how does it work?
+    - image: /img/cloud.jpg
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
-    - image: /img/tutorials.png
+        What the heck does serverless mean? There has to be a server somewhere right? A lesson in abstraction.  How to design a serverless application.
+    - image: /img/wine.jpg
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
-    - image: /img/meeting-space.png
+        You've heard of Wine and Canvas nights. Now try wine and html canvas.
+        Get started using the HTML canvas api while dining on wine and cheese.
+        Class and artistry are on display tonight.
+    - image: /img/vr.jpg
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
-  heading: What we offer
-  description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
+        Start a VR revolution at our first ever VR night. A variety of VR headsets
+        will be provided to play with as we explore creating some simple applications
+        for virtual reality.
 main:
-  heading: Great coffee with no compromises
+  heading: Join us for an exciting night of learning.
   description: >
-    We hold our coffee to the highest standards from the shrub to the cup.
-    That’s why we’re meticulous and transparent about each step of the coffee’s
-    journey. We personally visit each farm to make sure the conditions are
-    optimal for the plants, farmers and the local environment.
+    All of our events are great for those just looking to get exposed to a new concept.
+    Or do a deep dive on a topic and show off.  We want to make sure every event is awesome
+    so there will always be great content, food, and swag.
   image1:
-    alt: A close-up of a paper filter filled with ground coffee
+    alt: Lots of cool swag is available at our meetups.
     image: /img/products-grid3.jpg
   image2:
-    alt: A green cup of a coffee on a wooden table
+    alt: Meet and greet with awesome people and make new friends.
     image: /img/products-grid2.jpg
   image3:
-    alt: Coffee beans
+    alt: Tasty food and snacks.
     image: /img/products-grid1.jpg
 testimonials:
   - author: Elisabeth Kaurismäki
     quote: >-
-      The first time I tried Kaldi’s coffee, I couldn’t even believe that was
-      the same thing I’ve been drinking every morning.
+      Code Workshop was awesome. I learned a ton and made a lot of new friends
+      with similar interests and goals.
   - author: Philipp Trommler
     quote: >-
-      Kaldi is the place to go if you want the best quality coffee. I love their
-      stance on empowering farmers and transparency.
+      This is my favorite meetup in vegas. The events are always awesome and 
+      they have great food and awesome surprisse every time.
 full_image: /img/products-full-width.jpg
 pricing:
-  heading: Monthly subscriptions
+  heading: Upcoming events
   description: >-
-    We make it easy to make great coffee a part of your life. Choose one of our
-    monthly subscription plans to receive great coffee at your doorstep each
-    month. Contact us about more details and payment info.
-  plans:
-    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
-      items:
-        - 3 lbs of coffee per month
-        - Green or roasted beans"
-        - One or two varieties of beans"
-      plan: Small
-      price: '50'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
-      items:
-        - 6 lbs of coffee per month
-        - Green or roasted beans
-        - Up to 4 different varieties of beans
-      plan: Big
-      price: '80'
-    - description: Want a few tiny batches from different varieties? Try our custom plan
-      items:
-        - Whatever you need
-        - Green or roasted beans
-        - Unlimited varieties
-      plan: Custom
-      price: '??'
+    Check out our upcoming event schedule to find a workshop that floats your boat.
+    Don't worry if you don't know anything about the nights topic yet because
+    the events are designed to ease you in to the topic. If you're an expert already
+    just come because you might learn something new and it's a chance to hone your skills.
 ---
