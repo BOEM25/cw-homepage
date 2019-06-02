@@ -14,10 +14,10 @@ description: >-
   awesome Las Vegas hacker space in Henderson, NV.  It is open to people of all skill levels. See our event schedule below to find an event that's right for you. We'd love to see you at an event in the future.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/bot.jpg
       text: >
         Code meets the real world when we run code on bots, drones, and the internet of things. What does this mean, what can we do with it, how does it work?
-    - image: /img/coffee-gear.png
+    - image: /img/cloud.jpg
       text: >
         What the heck does serverless mean? There has to be a server somewhere right? A lesson in abstraction.  How to design a serverless application.
 ---
