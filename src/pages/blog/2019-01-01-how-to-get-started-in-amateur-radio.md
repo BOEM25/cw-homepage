@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Starting with Amateur Radio in 2019
 date: 2019-01-01T21:02:20.866Z
 featuredpost: false
-featuredimage: bot.jpg
+featuredimage: img/bot.jpg
 description: >-
   This post will be an exploration in to creating a complete theoretical
   shopping library for react using the new hooks API. It is just getting started
