@@ -5,9 +5,6 @@ date: 2019-01-01T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/bot.jpg
 description: >-
-  This post will be an exploration in to creating a complete theoretical
-  shopping library for react using the new hooks API. It is just getting started
-  but I want to test out a codesandbox.com embed on gatsby.
 tags:
   - ham radio
   - technology
