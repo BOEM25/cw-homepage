@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 class WorkshopList extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
       <div className="columns is-multiline">
@@ -14,59 +14,60 @@ class WorkshopList extends React.Component {
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
+                className={`card ${
+                  post.frontmatter.featuredpost ? "is-featured" : ""
                 }`}
               >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${
-                            post.title
-                          }`,
-                        }}
-                      />
+                {post.frontmatter.featuredimage ? (
+                  <div className="card-image">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.title}`
+                      }}
+                    />
+                  </div>
+                ) : null}
+                <div className="card-content">
+                  <div className="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img
+                          src="https://bulma.io/images/placeholders/96x96.png"
+                          alt="Placeholder image"
+                        />
+                      </figure>
                     </div>
-                  ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                    <div className="media-content">
+                      <p className="title is-4">{post.frontmatter.title}</p>
+                      <p className="subtitle is-6">@{post.frontmatter.date}</p>
+                    </div>
+                  </div>
+
+                  <div className="content">
+                    <p>{post.excerpt}</p>
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <Link className="card-footer-item" to={post.fields.slug}>
+                    Scheduled Times and Syllabus →
                   </Link>
-                </p>
+                </footer>
               </article>
             </div>
           ))}
       </div>
-    )
+    );
   }
 }
 
 WorkshopList.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
-}
+      edges: PropTypes.array
+    })
+  })
+};
 
 export default () => (
   <StaticQuery
@@ -103,4 +104,4 @@ export default () => (
     `}
     render={(data, count) => <WorkshopList data={data} count={count} />}
   />
-)
+);
