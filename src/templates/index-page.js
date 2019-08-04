@@ -70,14 +70,6 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
                 <div className="columns">
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
@@ -94,6 +86,21 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+                <section className="hero is-info">
+                  <div className="hero-body container">
+                    <h1 className="title">{mainpitch.title}</h1>
+                    <h2 className="subtitle">{mainpitch.description}</h2>
+                  </div>
+                </section>
+                <section className="section section--gradient">
+                <div className="container">
+
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
@@ -105,13 +112,9 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
+                </div>
+                </section>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
 );
 
 IndexPageTemplate.propTypes = {

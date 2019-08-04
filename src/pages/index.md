@@ -5,10 +5,10 @@ image: /img/home-jumbotron.jpg
 heading: Upcoming Workshops
 subheading: Adventure Driven Development Meetups
 mainpitch:
-  title: What we do
+  title: Want to contribute to Code Workshop?
   description: >
-    We promote a playful, and adventurous approach to learning new programming skills. We deliver engaging workshop driven content designed to expose software developers of all levels
-    to new topics and increase their understanding of software development concepts.
+    Code Workshop is an open collective of software developers who want to promote the joy of software development and help both new and experienced developers build their skills.  There are lots of ways to contribute.
+    If you have ideas for a blog post, a workshop, or would like to be a guest speaker please reach out to us and we will help you get started.
 description: >-
   Code Workshop is a software development meetup hosted once monthly at the SYNShop, an
   awesome Las Vegas hacker space in Henderson, NV.  It is open to people of all skill levels. See our event schedule below to find an event that's right for you. We'd love to see you at an event in the future.
