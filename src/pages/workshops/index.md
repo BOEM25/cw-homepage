@@ -1,5 +1,5 @@
 ---
-templateKey: 'product-page'
+templateKey: 'workshops-page'
 path: /workshops
 title: Our Workshops
 image: /img/jumbotron.jpg

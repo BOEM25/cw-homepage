@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Features from '../components/Features';
+import WorkshopList from '../components/WorkshopList';
+
 import Testimonials from '../components/Testimonials';
-import Pricing from '../components/Pricing';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
-export const ProductPageTemplate = ({
+export const WorkshopsPageTemplate = ({
   image,
   title,
   heading,
@@ -50,7 +50,7 @@ export const ProductPageTemplate = ({
           </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <Features gridItems={intro.blurbs} />
+              <WorkshopList gridItems={intro.blurbs} />
               <div className="columns">
                 <div className="column is-7">
                   <h3 className="has-text-weight-semibold is-size-3">
@@ -103,7 +103,7 @@ export const ProductPageTemplate = ({
   </div>
 );
 
-ProductPageTemplate.propTypes = {
+WorkshopsPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -122,12 +122,12 @@ ProductPageTemplate.propTypes = {
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 
-const ProductPage = ({ data }) => {
+const WorkshopsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <ProductPageTemplate
+      <WorkshopsPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -142,7 +142,7 @@ const ProductPage = ({ data }) => {
   );
 };
 
-ProductPage.propTypes = {
+WorkshopsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object
@@ -150,10 +150,10 @@ ProductPage.propTypes = {
   })
 };
 
-export default ProductPage;
+export default WorkshopsPage;
 
-export const productPageQuery = graphql`
-  query ProductPage($id: String!) {
+export const WorkshopsPageQuery = graphql`
+  query WorkshopsPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
