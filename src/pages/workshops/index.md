@@ -35,13 +35,13 @@ main:
     so there will always be great content, food, and swag.
   image1:
     alt: Lots of cool swag is available at our meetups.
-    image: /img/products-grid3.jpg
+    image: /img/event-photos/iot-back.jpg
   image2:
     alt: Meet and greet with awesome people and make new friends.
-    image: /img/products-grid2.jpg
+    image: /img/event-photos/iot-shop.jpg
   image3:
     alt: Tasty food and snacks.
-    image: /img/products-grid1.jpg
+    image: /img/event-photos/iot-front.jpg
 testimonials:
   - author: Elisabeth Kaurismäki
     quote: >-

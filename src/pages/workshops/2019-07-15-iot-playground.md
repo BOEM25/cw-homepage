@@ -3,7 +3,7 @@ templateKey: workshop
 title: IoT PlayGround
 date: 2019-07-15T21:02:20.866Z
 featuredpost: false
-featuredimage: /img/bot.jpg
+featuredimage: /img/event-banners/iot-event.jpg
 description: >-
   Learning about IoT with particle.io
 tags:

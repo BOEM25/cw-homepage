@@ -3,7 +3,7 @@ templateKey: workshop
 title: Intro to React Web Apps
 date: 2019-07-15T21:02:20.866Z
 featuredpost: false
-featuredimage: /img/bot.jpg
+featuredimage: /img/event-banners/react-intro-event.jpg
 description: >-
   Learning how to build your first react application.
 tags:
