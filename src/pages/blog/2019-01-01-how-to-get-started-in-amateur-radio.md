@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Starting with Amateur Radio in 2019
+title: Amateur Radio in 2019
 date: 2019-01-01T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/bot.jpg

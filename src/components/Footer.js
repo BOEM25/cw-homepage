@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import logo from "../img/logo.svg";
+import facebook from "../img/social/facebook.svg";
+import instagram from "../img/social/instagram.svg";
+import twitter from "../img/social/twitter.svg";
+import vimeo from "../img/social/vimeo.svg";
 
 const Footer = class extends React.Component {
   render() {
@@ -15,7 +15,7 @@ const Footer = class extends React.Component {
           <img
             src={logo}
             alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
+            style={{ width: "14em", height: "10em" }}
           />
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">
@@ -36,18 +36,13 @@ const Footer = class extends React.Component {
                     </li>
                     <li>
                       <Link className="navbar-item" to="/workshops">
-                        Workshops
+                        Live Workshops
                       </Link>
                     </li>
                     <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
+                      <Link className="navbar-item" to="/video-workshops/">
+                        Video Workshops
+                      </Link>
                     </li>
                   </ul>
                 </section>
@@ -57,7 +52,17 @@ const Footer = class extends React.Component {
                   <ul className="menu-list">
                     <li>
                       <Link className="navbar-item" to="/blog">
-                        Latest Stories
+                        Blog
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/shop-talk-podcast/">
+                        Shop Talk Podcast
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/open-source-fund/">
+                        Open Source Fund
                       </Link>
                     </li>
                     <li>
@@ -73,7 +78,7 @@ const Footer = class extends React.Component {
                   <img
                     src={facebook}
                     alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
                 <a title="twitter" href="https://twitter.com/workshopcode">
@@ -81,21 +86,24 @@ const Footer = class extends React.Component {
                     className="fas fa-lg"
                     src={twitter}
                     alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
                 <a title="instagram" href="https://instagram.com/codeworkshop">
                   <img
                     src={instagram}
                     alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
-                <a title="youtube" href="https://www.youtube.com/channel/UC27DIahQvIOJHnQwpJmH0LA">
+                <a
+                  title="youtube"
+                  href="https://www.youtube.com/channel/UC27DIahQvIOJHnQwpJmH0LA"
+                >
                   <img
                     src={vimeo}
                     alt="Youtube"
-                    style={{ width: '1em', height: '1em' }}
+                    style={{ width: "1em", height: "1em" }}
                   />
                 </a>
               </div>
@@ -103,8 +111,8 @@ const Footer = class extends React.Component {
           </div>
         </div>
       </footer>
-    )
+    );
   }
-}
+};
 
-export default Footer
+export default Footer;
