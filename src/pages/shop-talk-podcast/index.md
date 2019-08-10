@@ -5,10 +5,9 @@ title: Shop Talk PodCast
 image: /img/podcast-toys.jpeg
 heading: Podcasts
 description: >-
-  We host a variety of different events designed to cover a range of topics in 
-  the software development world. Check out some of our upcoming events to
-  find something that peaks your interest or seems like a topic you would like
-  to know more about.
+  We still haven't recorded the first podcast yet. But we promise it will be coming soon. If
+  you have any good ideas for topics or guests we could have on please let us know and we will
+  try our best to make it happen.
 intro:
   blurbs:
     - image: /img/bot.jpg

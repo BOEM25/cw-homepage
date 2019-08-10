@@ -1,14 +1,12 @@
 ---
-templateKey: 'video-workshops-page'
+templateKey: 'opensource-fund-page'
 path: /open-source-fund
 title: Open Source Fund
 image: /img/piggy-bank-2.jpeg
 heading: Open Source Fund
 description: >-
-  We host a variety of different events designed to cover a range of topics in 
-  the software development world. Check out some of our upcoming events to
-  find something that peaks your interest or seems like a topic you would like
-  to know more about.
+  The Open Source Fund is a community initiative to raise money for the most valuable and appreciated open source projects used by our members.
+  Coming soon.
 intro:
   blurbs:
     - image: /img/bot.jpg

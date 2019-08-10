@@ -9,7 +9,7 @@ import Content, { HTMLContent } from '../components/Content';
 export const WorkshopTemplate = ({
   content,
   contentComponent,
-  description,
+  upcoming,
   tags,
   title,
   helmet
@@ -42,17 +42,18 @@ export const WorkshopTemplate = ({
           <div className="column is-3">
             <nav className="panel">
               <p className="panel-heading">Upcoming Dates</p>
-              <a className="panel-block">
-                <span className="panel-icon">
-                  <i className="fas fa-book" aria-hidden="true" />
-                </span>
-                Aug. 21 2019
-              </a>
+              {(upcoming || []).map(event => (
+                <a className="panel-block" href={event.url} target="_blank">
+                  {event.date} @ {event.location}
+                </a>
+              ))}
               <div class="panel-block">
-                <button class="button is-link is-outlined is-fullwidth">
-                  Book this Workshop
-                </button>
-              </div>{' '}
+                <Link to="/contact" className="fullWidth">
+                  <button className="button is-link is-outlined is-fullwidth">
+                    Book this Workshop
+                  </button>
+                </Link>
+              </div>
             </nav>
           </div>
         </div>
@@ -77,7 +78,7 @@ const Workshop = ({ data }) => {
       <WorkshopTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        upcoming={post.frontmatter.upcoming}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -111,6 +112,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        upcoming {
+          date(formatString: "MMMM DD, YYYY")
+          location
+          url
+        }
         tags
       }
     }

@@ -4,8 +4,14 @@ title: Intro to React Web Apps
 date: 2019-07-15T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/event-banners/react-intro-event.jpg
+author: Stephen Castle
+authorimage: /img/contributors/stephen.jpg
 description: >-
   Learning how to build your first react application.
+upcoming:
+  - date: 2019-08-21T21:02:20.866Z
+    location: The Syn Shop
+    url: https://www.meetup.com/code-workshop/events/263522272/
 tags:
   - web development
   - react

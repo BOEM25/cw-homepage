@@ -2,21 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import WorkshopList from '../components/WorkshopList';
 
-import Testimonials from '../components/Testimonials';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-
-export const WorkshopsPageTemplate = ({
+export const OpenSourceFundPageTemplate = ({
   image,
   title,
   heading,
   description,
-  intro,
-  main,
-  testimonials,
-  fullImage,
-  pricing
+  intro
 }) => (
   <div className="content">
     <div
@@ -49,53 +41,7 @@ export const WorkshopsPageTemplate = ({
             </div>
           </div>
           <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <WorkshopList gridItems={intro.blurbs} />
-              <div className="columns">
-                <div className="column is-7">
-                  <h3 className="has-text-weight-semibold is-size-3">
-                    {main.heading}
-                  </h3>
-                  <p>{main.description}</p>
-                </div>
-              </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-vertical">
-                  <div className="tile">
-                    <div className="tile is-parent is-vertical">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image1} />
-                      </article>
-                    </div>
-                    <div className="tile is-parent">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image2} />
-                      </article>
-                    </div>
-                  </div>
-                  <div className="tile is-parent">
-                    <article className="tile is-child">
-                      <PreviewCompatibleImage imageInfo={main.image3} />
-                    </article>
-                  </div>
-                </div>
-              </div>
-              <Testimonials testimonials={testimonials} />
-              <div
-                className="full-width-image-container"
-                style={{
-                  backgroundImage: `url(${
-                    fullImage.childImageSharp
-                      ? fullImage.childImageSharp.fluid.src
-                      : fullImage
-                  })`
-                }}
-              />
-              <h2 className="has-text-weight-semibold is-size-2">
-                {pricing.heading}
-              </h2>
-              <p className="is-size-5">{pricing.description}</p>
-            </div>
+            <div className="column is-10 is-offset-1" />
           </div>
         </div>
       </div>
@@ -103,7 +49,7 @@ export const WorkshopsPageTemplate = ({
   </div>
 );
 
-WorkshopsPageTemplate.propTypes = {
+OpenSourceFundPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -122,12 +68,12 @@ WorkshopsPageTemplate.propTypes = {
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 
-const WorkshopsPage = ({ data }) => {
+const OpenSourceFundPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <WorkshopsPageTemplate
+      <OpenSourceFundPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -142,7 +88,7 @@ const WorkshopsPage = ({ data }) => {
   );
 };
 
-WorkshopsPage.propTypes = {
+OpenSourceFundPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object
@@ -150,9 +96,9 @@ WorkshopsPage.propTypes = {
   })
 };
 
-export default WorkshopsPage;
+export default OpenSourceFundPage;
 
-export const WorkshopsPageQuery = graphql`
+export const OpenSourceFundPageQuery = graphql`
   query OpenSourceFundPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {

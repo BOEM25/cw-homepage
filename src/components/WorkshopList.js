@@ -33,9 +33,11 @@ class WorkshopList extends React.Component {
                     <div className="media">
                       <div class="media-left">
                         <figure class="image is-48x48">
-                          <img
-                            src="https://bulma.io/images/placeholders/96x96.png"
-                            alt="Placeholder image"
+                          <PreviewCompatibleImage
+                            imageInfo={{
+                              image: post.frontmatter.authorimage,
+                              alt: `author thumbnail for event ${post.title}`
+                            }}
                           />
                         </figure>
                       </div>
@@ -90,6 +92,13 @@ export default () => (
               }
               frontmatter {
                 title
+                authorimage {
+                  childImageSharp {
+                    fluid(maxWidth: 160, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost

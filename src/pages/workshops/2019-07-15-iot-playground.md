@@ -4,8 +4,11 @@ title: IoT PlayGround
 date: 2019-07-15T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/event-banners/iot-event.jpg
+author: Stephen Castle
+authorimage: /img/contributors/stephen.jpg
 description: >-
   Learning about IoT with particle.io
+upcoming:
 tags:
   - embedded
   - IoT

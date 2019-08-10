@@ -41,60 +41,90 @@ export const WorkshopsPageTemplate = ({
     </div>
     <section className="section section--gradient">
       <div className="container">
-        <div className="section">
+        <div className="section has-text-centered">
+          <h2 class="title is-2">Core Team</h2>
           <div className="columns">
-            <div className="column is-7 is-offset-1">
-              <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-              <p>{description}</p>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/stephen.jpg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Stephen Castle</h3>
+              </figure>
+            </div>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Justin Hines</h3>
+              </figure>
+            </div>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Robert Thompson</h3>
+              </figure>
             </div>
           </div>
+        </div>
+        <div className="section has-text-centered">
+          <h2 class="title is-2">Regular Contributors</h2>
           <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <WorkshopList gridItems={intro.blurbs} />
-              <div className="columns">
-                <div className="column is-7">
-                  <h3 className="has-text-weight-semibold is-size-3">
-                    {main.heading}
-                  </h3>
-                  <p>{main.description}</p>
-                </div>
-              </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-vertical">
-                  <div className="tile">
-                    <div className="tile is-parent is-vertical">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image1} />
-                      </article>
-                    </div>
-                    <div className="tile is-parent">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image2} />
-                      </article>
-                    </div>
-                  </div>
-                  <div className="tile is-parent">
-                    <article className="tile is-child">
-                      <PreviewCompatibleImage imageInfo={main.image3} />
-                    </article>
-                  </div>
-                </div>
-              </div>
-              <Testimonials testimonials={testimonials} />
-              <div
-                className="full-width-image-container"
-                style={{
-                  backgroundImage: `url(${
-                    fullImage.childImageSharp
-                      ? fullImage.childImageSharp.fluid.src
-                      : fullImage
-                  })`
-                }}
-              />
-              <h2 className="has-text-weight-semibold is-size-2">
-                {pricing.heading}
-              </h2>
-              <p className="is-size-5">{pricing.description}</p>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Austin Lambert</h3>
+              </figure>
+            </div>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Cameron Tatz</h3>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div className="section has-text-centered">
+          <h2 class="title is-2">Supporters</h2>
+          <div className="columns">
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Richard Hertzog</h3>
+              </figure>
+            </div>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Marcus Ulrich</h3>
+              </figure>
+            </div>
+            <div className="column is-3">
+              <figure class="image">
+                <img
+                  src={`/img/contributors/placeholder.jpeg`}
+                  className="is-rounded"
+                />
+                <h3 className="subtitle is-4">Aditya Jain</h3>
+              </figure>
             </div>
           </div>
         </div>
