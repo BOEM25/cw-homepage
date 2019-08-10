@@ -2,7 +2,7 @@
 templateKey: 'workshops-page'
 path: /workshops
 title: Live Workshops
-image: /img/jumbotron.jpg
+image: /img/classroom-robots.jpeg
 heading: Workshops
 description: >-
   We host a variety of different events designed to cover a range of topics in 

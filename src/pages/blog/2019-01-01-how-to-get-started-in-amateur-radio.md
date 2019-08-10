@@ -3,8 +3,12 @@ templateKey: blog-post
 title: Amateur Radio in 2019
 date: 2019-01-01T21:02:20.866Z
 featuredpost: false
-featuredimage: /img/bot.jpg
+author: Stephen Castle
+authorimage: /img/contributors/stephen.jpg
+featuredimage: /img/blog-images/radio-dog.jpg
 description: >-
+  Have you ever considered learning more about how radio communications work?
+  Learn how to get an amateur radio license and cool callsign, it's easier than you think.
 tags:
   - ham radio
   - technology
@@ -43,7 +47,7 @@ you your score, if you pass, congratulations you are a licensed amateur radio
 operator. A few weeks later I was issued a call sign, and was ready to go. It's
 really that easy.
 
-![Dog wearing sunglasses with a radio.](/img/adobestock_68615649.jpg)
+![Dog wearing sunglasses with a radio.](/img/blog/images/radio-dog.jpg)
 
 > It's cool to learn about radio waves!
 
@@ -95,7 +99,7 @@ reasons.
 - According to movies, learning Morse code will almost definitely save your life
   at some point.
 
-![Girl looking at radio.](/img/adobestock_56964234.jpg)
+![Girl looking at radio.](/img/blog/images/radio-girl.jpg)
 
 > Oh radio, you are so interesting, tell me your secrets bb.
 

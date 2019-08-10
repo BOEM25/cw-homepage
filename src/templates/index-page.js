@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `center center`,
         backgroundAttachment: `fixed`
       }}
     >
@@ -86,35 +86,32 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </section>
-                <section className="hero is-info">
-                  <div className="hero-body container">
-                    <h1 className="title">{mainpitch.title}</h1>
-                    <h2 className="subtitle">{mainpitch.description}</h2>
-                  </div>
-                </section>
-                <section className="section section--gradient">
-                <div className="container">
-
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest content
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-                </div>
-                </section>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="hero is-info">
+      <div className="hero-body container">
+        <h1 className="title">{mainpitch.title}</h1>
+        <h2 className="subtitle">{mainpitch.description}</h2>
+      </div>
+    </section>
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="column is-12">
+          <h3 className="has-text-weight-semibold is-size-2">Latest content</h3>
+          <BlogRoll />
+          <div className="column is-12 has-text-centered">
+            <Link className="btn" to="/blog">
+              Read more
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 );
 
 IndexPageTemplate.propTypes = {

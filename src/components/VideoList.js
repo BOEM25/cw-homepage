@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 class VideoList extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class VideoList extends React.Component {
             <div className="is-parent column is-6" key={post.id}>
               <article
                 className={`card ${
-                  post.frontmatter.featuredpost ? "is-featured" : ""
+                  post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
               >
                 {post.frontmatter.featuredimage ? (
