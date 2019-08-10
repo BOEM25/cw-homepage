@@ -1,9 +1,9 @@
 ---
-templateKey: 'product-page'
+templateKey: 'workshops-page'
 path: /workshops
-title: Our Workshops
-image: /img/jumbotron.jpg
-heading: Our events
+title: Live Workshops
+image: /img/classroom-robots.jpeg
+heading: Workshops
 description: >-
   We host a variety of different events designed to cover a range of topics in 
   the software development world. Check out some of our upcoming events to
@@ -28,20 +28,20 @@ intro:
         will be provided to play with as we explore creating some simple applications
         for virtual reality.
 main:
-  heading: Join us for an exciting night of learning.
+  heading: Schedule a workshop at your location.
   description: >
     All of our events are great for those just looking to get exposed to a new concept.
     Or do a deep dive on a topic and show off.  We want to make sure every event is awesome
     so there will always be great content, food, and swag.
   image1:
     alt: Lots of cool swag is available at our meetups.
-    image: /img/products-grid3.jpg
+    image: /img/event-photos/iot-back.jpg
   image2:
     alt: Meet and greet with awesome people and make new friends.
-    image: /img/products-grid2.jpg
+    image: /img/event-photos/iot-shop.jpg
   image3:
     alt: Tasty food and snacks.
-    image: /img/products-grid1.jpg
+    image: /img/event-photos/iot-front.jpg
 testimonials:
   - author: Elisabeth Kaurismäki
     quote: >-
@@ -53,7 +53,7 @@ testimonials:
       they have great food and awesome surprisse every time.
 full_image: /img/products-full-width.jpg
 pricing:
-  heading: Upcoming events
+  heading: Propose a talk or workshop idea
   description: >-
     Check out our upcoming event schedule to find a workshop that floats your boat.
     Don't worry if you don't know anything about the nights topic yet because

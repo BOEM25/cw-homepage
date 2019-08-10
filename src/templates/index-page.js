@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Features from '../components/Features';
+import WorkshopList from '../components/WorkshopList';
 import BlogRoll from '../components/BlogRoll';
 
 export const IndexPageTemplate = ({
@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `center center`,
         backgroundAttachment: `fixed`
       }}
     >
@@ -70,14 +70,6 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
                 <div className="columns">
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
@@ -86,7 +78,7 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <Features gridItems={intro.blurbs} />
+                <WorkshopList gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/workshops">
@@ -94,19 +86,27 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="hero is-info">
+      <div className="hero-body container">
+        <h1 className="title">{mainpitch.title}</h1>
+        <h2 className="subtitle">{mainpitch.description}</h2>
+      </div>
+    </section>
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="column is-12">
+          <h3 className="has-text-weight-semibold is-size-2">Latest content</h3>
+          <BlogRoll />
+          <div className="column is-12 has-text-centered">
+            <Link className="btn" to="/blog">
+              Read more
+            </Link>
           </div>
         </div>
       </div>
