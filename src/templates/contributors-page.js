@@ -7,17 +7,7 @@ import WorkshopList from '../components/WorkshopList';
 import Testimonials from '../components/Testimonials';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
-export const WorkshopsPageTemplate = ({
-  image,
-  title,
-  heading,
-  description,
-  intro,
-  main,
-  testimonials,
-  fullImage,
-  pricing
-}) => (
+export const WorkshopsPageTemplate = ({ image, title }) => (
   <div className="content">
     <div
       className="full-width-image-container margin-top-0"
@@ -189,7 +179,7 @@ export const WorkshopsPageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 1920, quality: 80) {
               ...GatsbyImageSharpFluid
             }
           }

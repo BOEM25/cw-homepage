@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import WorkshopList from '../components/WorkshopList';
-
+import ImageAndInfo from '../components/ImageAndInfo/ImageAndInfo';
 import Testimonials from '../components/Testimonials';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
@@ -51,14 +51,11 @@ export const WorkshopsPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <WorkshopList gridItems={intro.blurbs} />
-              <div className="columns">
-                <div className="column is-7">
-                  <h3 className="has-text-weight-semibold is-size-3">
-                    {main.heading}
-                  </h3>
-                  <p>{main.description}</p>
-                </div>
-              </div>
+              <ImageAndInfo
+                title={main.heading}
+                body={main.description}
+                image={main.onsiteImage}
+              />
               <div className="tile is-ancestor">
                 <div className="tile is-vertical">
                   <div className="tile">
@@ -159,7 +156,7 @@ export const WorkshopsPageQuery = graphql`
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 1920, quality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -181,6 +178,16 @@ export const WorkshopsPageQuery = graphql`
         main {
           heading
           description
+          onsiteImage {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 526, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
           image1 {
             alt
             image {

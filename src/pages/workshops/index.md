@@ -30,9 +30,11 @@ intro:
 main:
   heading: Schedule a workshop at your location.
   description: >
-    All of our events are great for those just looking to get exposed to a new concept.
-    Or do a deep dive on a topic and show off.  We want to make sure every event is awesome
-    so there will always be great content, food, and swag.
+    Would you like to have one of our workshops held at your location? Let us know and
+    we can discuss what works best for your group, organization, or school.
+  onsiteImage:
+    alt: Book an event at your location.
+    image: /img/school.png
   image1:
     alt: Lots of cool swag is available at our meetups.
     image: /img/event-photos/iot-back.jpg
