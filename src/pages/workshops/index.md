@@ -52,7 +52,7 @@ testimonials:
   - author: Philipp Trommler
     quote: >-
       This is my favorite meetup in vegas. The events are always awesome and 
-      they have great food and awesome surprisse every time.
+      they have great food and awesome surprises every time.
 full_image: /img/products-full-width.jpg
 pricing:
   heading: Propose a talk or workshop idea
