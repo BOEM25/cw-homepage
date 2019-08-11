@@ -7,34 +7,41 @@ featuredimage: /img/event-banners/iot-event.jpg
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
 description: >-
-  Learning about IoT with particle.io
+  Creating Internet of Things services, how to get started, and some best practices. After the talk, we will provide a ton of cool IoT devices from lightbulbs to locks to programmable drones and IoT buttons provided by particle.io and everyone will get to jump in and play around with them.
 upcoming:
+previous:
+  - date: 2019-07-17T21:02:20.866Z
+    location: The Syn Shop
+    url: https://www.meetup.com/code-workshop/events/262315902/
 tags:
   - embedded
   - IoT
 ---
 
-Join us on the third Wed of July at the SYN Shop https://synshop.org/ in Henderson for a demo and talk about creating Internet of Things services, how to get started, and some best practices. After the talk, we will provide a ton of cool IoT devices from lightbulbs to locks to programmable drones and IoT buttons provided by particle.io and everyone will get to jump in and play around with them. Food is provided, and at the end of the night there will be an opportunity for anyone who wants to demo their project, and we'll have some prizes for the coolest workshop projects.
+## Description
 
-Schedule:
-6:00 - 6:30 Snacks, hanging out, getting settled in.
-6:30 - 7:15 Intro talk on IoT and a demo project.
-7:15 - 8:15 Workshop challenge. Create your own IoT project to solve a secret puzzle and win prizes for the most clever solutions. You can work by yourself or join a group, it's up to you. (We will have starter code and facilitators available to help out with any questions)
-8:15 - 9:00 Show and tell. Anyone who would like to show off their project is invited up to demo it and we'll vote on a few projects to win prizes.
+Creating Internet of Things services, how to get started, and some best practices. After the talk, we will provide a ton of cool IoT devices from lightbulbs to locks to programmable drones and IoT buttons provided by particle.io and everyone will get to jump in and play around with them.
 
-FAQ:
-Do I need to stay for the whole thing?
+## Experience Level
 
-Nope! Feel free to drop in or leave early, whatever works for you.
+Intended for anyone new to IoT or even programming in general. No experience required.
 
-Do I need to bring a computer?
+## Programming Languages used in the course.
 
-You should bring a laptop if you want to participate in the challenges, there may be some extras available but no guarantees. If you just want to listen to the talk or hang out that's fine too.
+- C++
+- Javascript
 
-What programming languages will be used in this meetup?
+## Prerequisites
 
-We have developers attending who know: Python, GO, and Javascript and will have starter materials and demo projects available for these languages. But if you want to come and use another language on your workshop project that's awesome too, we are language agnostic and each event will have different languages supported depending on the best fit for the topic
+- A laptop with usb port (Windows, macOS, or Linux).
+- [Install Node](https://nodejs.org/en/download/)
 
-Do I need a lot of experience to work on my own workshop project?
+## Course Materials
 
-No, we planned the demo project and talk at the beginning of the workshop to walk you through setting up a project. If you are a little more advanced already though there will be some opportunities for doing cooler additional stuff in the workshop challenge for extra credit.
+[GitHub Repo](https://github.com/codeworkshop-dev/workshops/tree/master/intro-to-particle-iot)
+
+## Slide Deck
+
+## Video
+
+## Photo Gallery

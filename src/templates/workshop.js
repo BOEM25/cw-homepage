@@ -4,12 +4,14 @@ import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
+import EventWidget from '../components/EventWidget';
 import Content, { HTMLContent } from '../components/Content';
 
 export const WorkshopTemplate = ({
   content,
   contentComponent,
   upcoming,
+  previous,
   tags,
   title,
   helmet
@@ -21,7 +23,7 @@ export const WorkshopTemplate = ({
       {helmet || ''}
       <div className="container content">
         <div className="columns">
-          <div className="column is-9">
+          <div className="column is-8">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -39,22 +41,13 @@ export const WorkshopTemplate = ({
               </div>
             ) : null}
           </div>
-          <div className="column is-3">
-            <nav className="panel">
-              <p className="panel-heading">Upcoming Dates</p>
-              {(upcoming || []).map(event => (
-                <a className="panel-block" href={event.url} target="_blank">
-                  {event.date} @ {event.location}
-                </a>
-              ))}
-              <div class="panel-block">
-                <Link to="/contact" className="fullWidth">
-                  <button className="button is-link is-outlined is-fullwidth">
-                    Book this Workshop
-                  </button>
-                </Link>
-              </div>
-            </nav>
+          <div className="column is-4">
+            <EventWidget
+              events={upcoming}
+              title="Upcoming Events"
+              showBookButton
+            />
+            <EventWidget events={previous} title="Previous Events" />
           </div>
         </div>
       </div>
@@ -79,6 +72,7 @@ const Workshop = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         upcoming={post.frontmatter.upcoming}
+        previous={post.frontmatter.previous}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -113,6 +107,11 @@ export const pageQuery = graphql`
         title
         description
         upcoming {
+          date(formatString: "MMMM DD, YYYY")
+          location
+          url
+        }
+        previous {
           date(formatString: "MMMM DD, YYYY")
           location
           url

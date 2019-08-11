@@ -50,7 +50,7 @@ class WorkshopList extends React.Component {
                     </div>
 
                     <div className="content">
-                      <p>{post.excerpt}</p>
+                      <p>{post.frontmatter.description}</p>
                     </div>
                   </div>
                   <footer class="card-footer">
@@ -92,6 +92,7 @@ export default () => (
               }
               frontmatter {
                 title
+                description
                 authorimage {
                   childImageSharp {
                     fluid(maxWidth: 160, quality: 100) {
