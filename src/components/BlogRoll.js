@@ -30,7 +30,7 @@ class BlogRoll extends React.Component {
                     </div>
                   ) : null}
                   <div className="card-content">
-                    <div className="media">
+                    <div className="media wrap">
                       <div class="media-left">
                         <figure class="image is-48x48">
                           <PreviewCompatibleImage

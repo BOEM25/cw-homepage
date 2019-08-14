@@ -3,7 +3,7 @@ var proxy = require('http-proxy-middleware');
 module.exports = {
   siteMetadata: {
     title: 'Code Workshop',
-    siteUrl: 'https://codeworkshop.dev'
+    siteUrl: 'https://codeworkshop.dev',
     description:
       'Code Workshop is a software development meetup hosted once monthly at the SYNShop, an awesome Las Vegas hacker space in Henderson, NV. It is open to people of all skill levels. See our event schedule below to find an event thats right for you..'
   },
