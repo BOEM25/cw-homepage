@@ -11,22 +11,6 @@ description: >-
   to know more about.
 intro:
   blurbs:
-    - image: /img/bot.jpg
-      text: >
-        Code meets the real world when we run code on bots, drones, and the internet of things. What does this mean, what can we do with it, how does it work?
-    - image: /img/cloud.jpg
-      text: >
-        What the heck does serverless mean? There has to be a server somewhere right? A lesson in abstraction.  How to design a serverless application.
-    - image: /img/wine.jpg
-      text: >
-        You've heard of Wine and Canvas nights. Now try wine and html canvas.
-        Get started using the HTML canvas api while dining on wine and cheese.
-        Class and artistry are on display tonight.
-    - image: /img/vr.jpg
-      text: >
-        Start a VR revolution at our first ever VR night. A variety of VR headsets
-        will be provided to play with as we explore creating some simple applications
-        for virtual reality.
 main:
   heading: Schedule a workshop at your location.
   description: >
