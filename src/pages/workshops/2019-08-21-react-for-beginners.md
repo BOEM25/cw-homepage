@@ -13,6 +13,9 @@ upcoming:
     location: The Syn Shop
     url: https://www.meetup.com/code-workshop/events/263522272/
 previous:
+gallery:
+  - image: /img/event-photos/iot-front.jpg
+    caption: Learning about IoT with particle.io
 tags:
   - web development
   - react
