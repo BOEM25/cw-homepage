@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import WorkshopList from '../components/WorkshopList';
 import ImageAndInfo from '../components/ImageAndInfo/ImageAndInfo';
@@ -92,6 +92,9 @@ export const WorkshopsPageTemplate = ({
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
+              <Link to="/contact">
+                <button className="button">Contact Us</button>
+              </Link>
             </div>
           </div>
         </div>

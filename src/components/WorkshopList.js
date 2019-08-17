@@ -43,14 +43,17 @@ class WorkshopList extends React.Component {
                       </div>
                       <div className="media-content">
                         <p className="title is-4">{post.frontmatter.title}</p>
-                        <p className="subtitle is-6">
-                          @{post.frontmatter.date}
-                        </p>
+                        <p className="subtitle is-6">{post.frontmatter.date}</p>
                       </div>
                     </div>
 
                     <div className="content">
                       <p>{post.frontmatter.description}</p>
+                    </div>
+                    <div className="tags">
+                      {post.frontmatter.tags.map(tag => (
+                        <span className="tag is-danger">{tag}</span>
+                      ))}
                     </div>
                   </div>
                   <footer class="card-footer">
@@ -93,6 +96,9 @@ export default () => (
               frontmatter {
                 title
                 description
+                tags
+                languages
+                experienceLevel
                 authorimage {
                   childImageSharp {
                     fluid(maxWidth: 160, quality: 100) {

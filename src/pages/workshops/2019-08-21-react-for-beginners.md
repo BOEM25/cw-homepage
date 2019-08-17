@@ -5,6 +5,9 @@ date: 2019-07-15T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/event-banners/react-intro-event.jpg
 author: Stephen Castle
+experienceLevel: 0
+languages:
+  - javascript
 authorimage: /img/contributors/stephen.jpg
 description: >-
   Learn how to build a basic web application with React. React is one of the most popular front end javascript web frameworks today, and definitely one of the most hireable skills. Learn how to get started and how to follow the best practices used by professional React developers.

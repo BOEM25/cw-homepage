@@ -96,6 +96,9 @@ export const IndexPageTemplate = ({
       <div className="hero-body container">
         <h1 className="title">{mainpitch.title}</h1>
         <h2 className="subtitle">{mainpitch.description}</h2>
+        <Link to="/contact">
+          <button className="button">Contact Us</button>
+        </Link>
       </div>
     </section>
     <section className="section section--gradient">
