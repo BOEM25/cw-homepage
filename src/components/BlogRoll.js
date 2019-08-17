@@ -50,6 +50,11 @@ class BlogRoll extends React.Component {
                     <div className="content">
                       <p>{post.frontmatter.description}</p>
                     </div>
+                    <div className="tags">
+                      {post.frontmatter.tags.map(tag => (
+                        <span className="tag is-danger">{tag}</span>
+                      ))}
+                    </div>
                   </div>
                   <footer class="card-footer">
                     <Link className="card-footer-item" to={post.fields.slug}>
@@ -94,6 +99,7 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
                 description
+                tags
                 authorimage {
                   childImageSharp {
                     fluid(maxWidth: 160, quality: 100) {

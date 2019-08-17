@@ -1,7 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
+import ReactTooltip from 'react-tooltip';
+
 import PreviewCompatibleImage from './PreviewCompatibleImage';
+import easy from '../img/icons/easy.svg';
+import medium from '../img/icons/medium.svg';
+import hard from '../img/icons/hard.svg';
+
+import js from '../img/languages/js.svg';
+import cpp from '../img/languages/c++.svg';
+
+const experienceMap = {
+  0: {
+    icon: easy,
+    message:
+      'This workshop can be completed with little to no programming experience.'
+  },
+  1: {
+    icon: medium,
+    message: 'This course requires moderate programming experience.'
+  },
+  2: {
+    icon: hard,
+    message:
+      'This course is for professional programmers with some years of experience.'
+  }
+};
+
+const languageMap = {
+  'c++': cpp,
+  javascript: js
+};
 
 class WorkshopList extends React.Component {
   render() {
@@ -21,6 +51,25 @@ class WorkshopList extends React.Component {
                 >
                   {post.frontmatter.featuredimage ? (
                     <div className="card-image">
+                      <div className="iconBar">
+                        <img
+                          src={
+                            experienceMap[post.frontmatter.experienceLevel].icon
+                          }
+                          className="experienceIcon"
+                          data-tip={
+                            experienceMap[post.frontmatter.experienceLevel]
+                              .message
+                          }
+                        />
+                        <ReactTooltip multiline />
+                        {post.frontmatter.languages.map(language => (
+                          <img
+                            src={languageMap[language]}
+                            className="experienceIcon"
+                          />
+                        ))}
+                      </div>
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
