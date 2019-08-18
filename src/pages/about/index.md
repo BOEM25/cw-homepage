@@ -28,6 +28,11 @@ We believe that doing is learning. We minimize the amount of lecture time at our
 instead focus on interactive exercises and participation. Each event will have clear learning goals,
 and facilitators available to help with any questions that you may have and to provide guidance.
 
+### Community Focused
+
+No goal is accomplished alone. We rely on our community and team mates to accomplish great things.
+Code Workshop believes in cultivating strong communities, friendships, and teams.
+
 ### Open Source
 
 As members of the software community we stand on the shoulders of many amazing open source software
