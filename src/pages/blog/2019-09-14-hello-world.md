@@ -15,7 +15,6 @@ tags:
   - beginners
 ---
 
-# Hello World
 Have you ever wanted to use a new programming language but been overwhelmed by the crazy amount of information to learn? You're not alone.
 That's why one of the first things many programmers who are new to a language do is write a hello world program. A hello world program means
 creating the simplest possible program you can write to print the words `Hello World` on the screen!  It might not seem like much, but the objective is just
