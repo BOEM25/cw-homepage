@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
-title: Amateur Radio in 2019
-date: 2019-01-01T21:02:20.866Z
+title: Hello World!
+date: 2019-09-13T21:02:20.866Z
 featuredpost: false
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
@@ -46,7 +46,7 @@ Try Running it here! [Repl.it Go](https://repl.it/languages/go)
 ## Javascript
 ```javascript
 console.log("Hello World");
-}
+
 ```
 Try Running it here! [Repl.it Javascript](https://repl.it/languages/javascript)
 
