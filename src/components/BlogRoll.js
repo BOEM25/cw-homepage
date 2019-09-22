@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 class BlogRoll extends React.Component {
   render() {
@@ -9,17 +9,17 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className="columns is-multiline">
+      <div className="columns is-multiline stretch">
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-4" key={post.id}>
-              <Link className="card-footer-item" to={post.fields.slug}>
-                <article
-                  className={`card ${
-                    post.frontmatter.featuredpost ? 'is-featured' : ''
-                  }`}
-                >
-                  {post.frontmatter.featuredimage ? (
+              <article
+                className={`card ${
+                  post.frontmatter.featuredpost ? "is-featured" : ""
+                }`}
+              >
+                {post.frontmatter.featuredimage ? (
+                  <Link className="" to={post.fields.slug}>
                     <div className="card-image">
                       <PreviewCompatibleImage
                         imageInfo={{
@@ -28,41 +28,44 @@ class BlogRoll extends React.Component {
                         }}
                       />
                     </div>
-                  ) : null}
-                  <div className="card-content">
-                    <div className="media wrap">
-                      <div class="media-left">
-                        <figure class="image is-48x48">
-                          <PreviewCompatibleImage
-                            imageInfo={{
-                              image: post.frontmatter.authorimage,
-                              alt: `image of author for post ${post.title}`
-                            }}
-                          />
-                        </figure>
-                      </div>
-                      <div className="media-content">
-                        <p className="title is-4">{post.frontmatter.title}</p>
-                        <p className="subtitle is-6">{post.frontmatter.date}</p>
-                      </div>
+                  </Link>
+                ) : null}
+                <div className="card-content">
+                  <div className="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: post.frontmatter.authorimage,
+                            alt: `image of author for post ${post.title}`
+                          }}
+                        />
+                      </figure>
                     </div>
 
-                    <div className="content">
-                      <p>{post.frontmatter.description}</p>
-                    </div>
-                    <div className="tags">
-                      {post.frontmatter.tags.map(tag => (
-                        <span className="tag is-danger">{tag}</span>
-                      ))}
+                    <div className="media-content">
+                      <Link className="" to={post.fields.slug}>
+                        <p className="title is-4">{post.frontmatter.title}</p>
+                      </Link>
+                      <p className="subtitle is-6">{post.frontmatter.date}</p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <Link className="card-footer-item" to={post.fields.slug}>
-                      Read More →
-                    </Link>
-                  </footer>
-                </article>
-              </Link>
+
+                  <div className="content">
+                    <p>{post.frontmatter.description}</p>
+                  </div>
+                  <div className="tags">
+                    {post.frontmatter.tags.map(tag => (
+                      <span className="tag is-danger">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <Link className="card-footer-item" to={post.fields.slug}>
+                    Read More →
+                  </Link>
+                </footer>
+              </article>
             </div>
           ))}
       </div>
