@@ -46,11 +46,138 @@ If we use a library for our data-fetching, it would be best if it doesn't add ve
 ## So what are our options for data fetching with React hooks?
 Let's take a look at a few different options for fetching data. To keep things simple, we'll start with a basic React app template that has a list view, a detail view, and hardcoded data. Next, we replace the hardcoded data with a few different data-fetching solutions while paying attention to how they meet the needs mentioned above, such as caching and cancellation. 
 
+> You can use this codesandbox.com template to follow along with the code below.
 
 <iframe  src="https://codesandbox.io/embed/list-detail-react-app-template-y8lb2?fontsize=14"  title="List - Detail React App Template"  allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-### Using useEffect and useState hooks to write your own data fetching
 
-### Using the React-Fetching-Library
-Writing your own data-fetching solution is a great way to learn about hooks, and understand some of the implications that arise when fetching data from an API in react.
-It's also an incredibly common need in a web application and so there are a number of great libraries out there that you might be better off using than writing your own.
+
+### Using useEffect and useState hooks for data fetching
+Now let's go through a simple example of data-fetching using hooks. We can use the awesome [PokéAPI](https://pokeapi.co/) to build a simple application. We can do two things,
+request a list of Pokemon from the `List.js` component and then request detailed pokemon information on the `Detail.js` route and display the default sprite for the Pokemon.
+
+
+
+#### Importing the dependencices we need.
+```javascript
+// List.js
+// highlight-start
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+// highlight-end
+import { Link } from "react-router-dom";
+function List() {
+  const [data, setData] = useState([]);
+  return (
+    <div className="container">
+      <ul className="list">
+        {data.map(item => (
+          <li key={item.name} className="list-item">
+            <Link to={item.name}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default List;
+
+```
+
+#### Creating our useEffect hook to fetch data
+```javascript
+// List.js
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+function List() {
+  const [data, setData] = useState([]);
+  // highlight-start
+  useEffect(() => {
+    // We declare an async function scoped inside of the useEffect callback param
+    // this is because useEffect callbacks must be syncronous to avoid race conditions.
+    async function fetchData() {
+      const result = await axios("https://pokeapi.co/api/v2/pokemon");
+      console.log(result);
+      // Now that our results have returned we can use the useState setter to set our data to be the new results.
+      setData(result.data.results);
+    }
+    fetchData();
+    // Notice the second param to the function is [] this means
+    // our useEffect hook should only run on initial component load. More on this later
+  }, []);
+  // highlight-end
+
+  return (
+    <div className="container">
+      <ul className="list">
+        {data.map(item => (
+          <li key={item.name} className="list-item">
+            <Link to={item.name}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default List;
+
+```
+
+#### Data Fetching on the Detail Page
+Fetching our pokemon details is almost the same as on the previous route, with two minor differences.
+We need to get the pokemon id from the route and use it in our API URI. Also, we need to make a change to 
+the second parameter in our useEffect hook to update when the id changes.
+
+
+```javascript
+  // highlight-start
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+  // highlight-end
+import { Link } from "react-router-dom";
+function Detail({
+  match: {
+    params: { id }
+  }
+}) {
+  const [data, setData] = useState({});
+  // highlight-start
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true);
+      const result = await axios(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      console.log(result);
+      setData(result.data);
+      setIsLoading(false);
+    }
+    fetchData();
+    // Notice the difference here from the List.js example. This time since our request is dependent on the value of
+    // id, we include it in this array. If it changes, our hook will execute its callback again.
+  }, [id]);
+  // highlight-end
+  return (
+    <div className="container">
+      <div className="card">
+        <h1>ID: {id}</h1>
+        <div className="img-container">
+          <img src={data.sprites.front_default} alt={data.name} />
+        </div>
+        <Link to="/">Return to List View</Link>
+      </div>
+    </div>
+  );
+}
+
+export default Detail;
+
+```
+> Try out the code sandbox below to see the finished example.
+
+<iframe src="https://codesandbox.io/embed/fetching-data-in-react-with-useeffect-and-usestate-6f2u8?fontsize=14" title="Fetching data in react with useEffect and useState" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+
+## Handling performance and non-happy path concerns in part 2.
+In part 2 of this 3 part series on data fetching using React hooks, we will see how to add error and loading spinner support, handle request cancellation, add suspense support, and implement response caching.
