@@ -120,6 +120,7 @@ module.exports = {
         whitelistPatternsChildren: [
           /^pre/,
           /language/,
+          /blockquote/,
           /line-numbers/,
           /token/,
           /highlight/
