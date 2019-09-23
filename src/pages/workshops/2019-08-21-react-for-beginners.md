@@ -12,10 +12,10 @@ authorimage: /img/contributors/stephen.jpg
 description: >-
   Learn how to build a basic web application with React. React is one of the most popular front end javascript web frameworks today, and definitely one of the most hireable skills. Learn how to get started and how to follow the best practices used by professional React developers.
 upcoming:
+previous:
   - date: 2019-08-21T21:02:20.866Z
     location: The Syn Shop
     url: https://www.meetup.com/code-workshop/events/263522272/
-previous:
 gallery:
   - image: /img/event-photos/iot-front.jpg
     caption: Learning about IoT with particle.io
@@ -45,10 +45,6 @@ The things you will need to participate in the course, if you have trouble with 
 
 ## Course Materials
 
-[GitHub Repo](https://github.com/codeworkshop-dev/workshops)
-
-## Slide Deck
-
-## Video
+[GitHub Repo](https://github.com/codeworkshop-dev/intro-to-react-web-development)
 
 ## Photo Gallery

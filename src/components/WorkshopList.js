@@ -1,35 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import ReactTooltip from 'react-tooltip';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import ReactTooltip from "react-tooltip";
 
-import PreviewCompatibleImage from './PreviewCompatibleImage';
-import easy from '../img/icons/easy.svg';
-import medium from '../img/icons/medium.svg';
-import hard from '../img/icons/hard.svg';
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import easy from "../img/icons/easy.svg";
+import medium from "../img/icons/medium.svg";
+import hard from "../img/icons/hard.svg";
 
-import js from '../img/languages/js.svg';
-import cpp from '../img/languages/c++.svg';
+import js from "../img/languages/js.svg";
+import cpp from "../img/languages/c++.svg";
 
 const experienceMap = {
   0: {
     icon: easy,
     message:
-      'This workshop can be completed with little to no programming experience.'
+      "This workshop can be completed with little to no programming experience."
   },
   1: {
     icon: medium,
-    message: 'This course requires moderate programming experience.'
+    message: "This course requires moderate programming experience."
   },
   2: {
     icon: hard,
     message:
-      'This course is for professional programmers with some years of experience.'
+      "This course is for professional programmers with some years of experience."
   }
 };
 
 const languageMap = {
-  'c++': cpp,
+  "c++": cpp,
   javascript: js
 };
 
@@ -46,7 +46,7 @@ class WorkshopList extends React.Component {
               <Link className="card-footer-item" to={post.fields.slug}>
                 <article
                   className={`card ${
-                    post.frontmatter.featuredpost ? 'is-featured' : ''
+                    post.frontmatter.featuredpost ? "is-featured" : ""
                   }`}
                 >
                   {post.frontmatter.featuredimage ? (
@@ -63,7 +63,7 @@ class WorkshopList extends React.Component {
                           }
                         />
                         <ReactTooltip multiline />
-                        {post.frontmatter.languages.map(language => (
+                        {(post.frontmatter.languages || []).map(language => (
                           <img
                             src={languageMap[language]}
                             className="experienceIcon"
