@@ -15,7 +15,7 @@ tags:
   - intermediate
 ---
 
-Let's learn to fetch data with ReactJS hooks from an API. Prior to hooks, it was most common put our data fetching code in the `componentDidMount()` or `componentDidUpdate()` lifecycle method. When we use hooks, we are working with functional components and do not easily have access to the lifecycle methods. Using a simple example we can see how easy it is to use the `useEffect` and `useState` hooks to do data fetching.
+Let's learn to fetch data with ReactJS hooks from an API. Prior to hooks, it was most common to put our data fetching code in the `componentDidMount()` or `componentDidUpdate()` lifecycle method. When we use hooks, we are working with functional components and do not easily have access to the lifecycle methods. Using a simple example we can see how easy it is to use the `useEffect` and `useState` hooks to do data fetching.
 
 If you haven't yet spent any time familiarizing yourself with React Hooks, I would recommend reading up on them a little bit here before continuing with this article. [React Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html)
 
