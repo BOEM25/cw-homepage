@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: codeworkshop.dev
+Token: 6f460377163511312c025639f82e4f92f43be971c21ae63ab973c1336a451e80
