@@ -1,6 +1,6 @@
 ---
 templateKey: workshop
-title: Build a Web Server with Go
+title: Build a Web Service with Go
 date: 2020-01-22T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/event-banners/webserver-with-go.jpg
@@ -10,7 +10,7 @@ experienceLevel: 0
 languages:
   - go
 description: >-
-  Go is a great programming language for writing web servers.  Learn how to write a web application using Go. 
+  Go is a great programming language for writing web servers.  Learn how to write a web application using Go. In this class we will get an introduction to the language and some best practices for writing web services using the awesome Go programming language.
 upcoming:
   - date: 2020-01-22T21:02:20.866Z
     location: The Syn Shop
