@@ -9,6 +9,8 @@ import medium from "../img/icons/medium.svg";
 import hard from "../img/icons/hard.svg";
 
 import js from "../img/languages/js.svg";
+import go from "../img/languages/go.svg";
+
 import cpp from "../img/languages/c++.svg";
 
 const experienceMap = {
@@ -30,6 +32,7 @@ const experienceMap = {
 
 const languageMap = {
   "c++": cpp,
+  go: go,
   javascript: js
 };
 
