@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Amateur Radio in 2019
+title: Why you should get in to Amateur Radio in 2019
 date: 2019-01-01T21:02:20.866Z
 featuredpost: false
 author: Stephen Castle

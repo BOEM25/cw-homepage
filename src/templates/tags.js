@@ -1,8 +1,8 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import ContentCard from '../components/ContentCard';
-import Layout from '../components/Layout';
+import React from "react";
+import Helmet from "react-helmet";
+import { Link, graphql } from "gatsby";
+import ContentCard from "../components/ContentCard";
+import Layout from "../components/Layout";
 
 class TagRoute extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class TagRoute extends React.Component {
     const title = this.props.data.site.siteMetadata.title;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${
-      totalCount === 1 ? '' : 's'
+      totalCount === 1 ? "" : "s"
     } tagged with “${tag}”`;
 
     return (
@@ -23,10 +23,10 @@ class TagRoute extends React.Component {
             <div className="columns">
               <div
                 className="column is-10 is-offset-1"
-                style={{ marginBottom: '6rem' }}
+                style={{ marginBottom: "6rem" }}
               >
                 <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-                <div className="columns">{postLinks}</div>
+                <div className="columns is-multiline">{postLinks}</div>
 
                 <p>
                   <Link to="/tags/">Browse all tags</Link>

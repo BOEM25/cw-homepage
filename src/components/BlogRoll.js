@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
+import { kebabCase } from "lodash";
+
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 class BlogRoll extends React.Component {
@@ -20,7 +22,7 @@ class BlogRoll extends React.Component {
               >
                 {post.frontmatter.featuredimage ? (
                   <Link className="" to={post.fields.slug}>
-                    <div className="card-image">
+                    <div className="card-image slim-card-image">
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
@@ -56,7 +58,9 @@ class BlogRoll extends React.Component {
                   </div>
                   <div className="tags">
                     {post.frontmatter.tags.map(tag => (
-                      <span className="tag is-danger">{tag}</span>
+                      <span className="tag is-danger">
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </span>
                     ))}
                   </div>
                 </div>
