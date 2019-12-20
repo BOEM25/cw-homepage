@@ -13,3 +13,14 @@ tags:
   - programming
   - books
 ---
+
+
+## Code Complete by Steve McConnell
+
+## The Pragmatic Programmer by Andrew Hunt and David Thomas
+
+## Clean Code by Robert Martin
+
+## Refactoring by Martin Fowler
+
+## The Structure and Interpretation of Computer Programs by Harold Abelson and Gerald Jay

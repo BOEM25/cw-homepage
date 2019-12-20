@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Hello World - The First Step in Learning to Code
+title: Writing a Hello World Program as a First Step in Learning a New Language
 date: 2019-09-13T21:02:20.866Z
 featuredpost: false
 author: Stephen Castle

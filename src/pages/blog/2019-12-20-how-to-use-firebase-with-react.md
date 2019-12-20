@@ -16,3 +16,13 @@ tags:
   - Firebase
   - tutorials
 ---
+
+## Creating a Firebase Account
+
+## Creating a Data Structure for Our App
+
+## Connecting our React App to Firebase
+
+## Using hooks to subscribe to our document collection
+
+## Using hooks to mutate our document collection

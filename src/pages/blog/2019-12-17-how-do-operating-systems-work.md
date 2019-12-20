@@ -14,3 +14,10 @@ tags:
   - operating systems
   - quick bytes
 ---
+
+
+## Virtualizing the CPU
+
+## Virtualizing the Memory
+
+## Virtualizing Long Term Storage (And Other IO Devices)
