@@ -14,3 +14,13 @@ tags:
   - beginners
   - career development
 ---
+
+## What you should know
+
+## Do I need A degree or certifications?
+
+## How useful are paid bootcamps, what are the options?
+
+## What is Interviewing for a Tech Role Like
+
+## Don't Get Frustrated by What you Don't Know Yet
