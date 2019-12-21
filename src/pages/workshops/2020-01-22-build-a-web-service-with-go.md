@@ -28,7 +28,3 @@ tags:
 ## Description
 
 Learn the GO programming language by building a simple web application. Go is a great language that is growing in popularity every day, and it's a very good choice for building web services. This workshop is designed to introduce you to the language by building a realistic web application together. This event is great for getting an introduction to GO and learning what it's all about. No experience is required.
-
-#### Food and snacks
-
-As always we will have food and drinks provided by an awesome local restaurant to be determined.
