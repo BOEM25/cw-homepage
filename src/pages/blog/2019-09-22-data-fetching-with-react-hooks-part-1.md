@@ -3,6 +3,7 @@ templateKey: blog-post
 title: "Data Fetching With React Hooks: Part 1"
 date: 2019-09-22T21:02:20.866Z
 featuredpost: false
+published: true
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
 featuredimage: /img/blog-images/hooks.jpg

@@ -3,7 +3,7 @@ templateKey: blog-post
 title: The Array Reduce Method in Javascript
 date: 2019-12-16T21:02:20.866Z
 featuredpost: false
-published: false
+published: true
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
 featuredimage: /img/blog-images/reduce.png

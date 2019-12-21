@@ -3,6 +3,7 @@ templateKey: blog-post
 title: Writing a Hello World Program as a First Step in Learning a New Language
 date: 2019-09-13T21:02:20.866Z
 featuredpost: false
+published: true
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
 featuredimage: /img/blog-images/helloworld.jpg

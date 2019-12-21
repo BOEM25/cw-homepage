@@ -3,6 +3,7 @@ templateKey: blog-post
 title: How to get started in amateur radio
 date: 2019-01-01T21:02:20.866Z
 featuredpost: false
+published: true
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
 featuredimage: /img/blog-images/radio-dog.jpg
