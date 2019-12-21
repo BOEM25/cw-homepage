@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Layout from "../components/Layout";
 import WorkshopList from "../components/WorkshopList";
 import BlogRoll from "../components/BlogRoll";
@@ -76,7 +76,7 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <WorkshopList gridItems={intro.blurbs} />
+                <WorkshopList />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/workshops">
@@ -90,14 +90,13 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    <section className="hero is-info">
-      <div className="hero-body container">
-        <h1 className="title">{mainpitch.title}</h1>
-        <h2 className="subtitle">{mainpitch.description}</h2>
-        <Link to="/contact">
-          <button className="button">Contact Us</button>
-        </Link>
-      </div>
+    <section>
+      <PreviewCompatibleImage
+        imageInfo={{
+          image: mainpitch.image,
+          alt: `Contribute to code workshop`
+        }}
+      />
     </section>
     <section className="section section--gradient">
       <div className="container">
@@ -172,6 +171,13 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 70) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         description
         intro {

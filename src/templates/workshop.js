@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
-import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
-import EventWidget from '../components/EventWidget';
-import Content, { HTMLContent } from '../components/Content';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import EventWidget from "../components/EventWidget";
+import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const WorkshopTemplate = ({
   content,
@@ -16,19 +16,22 @@ export const WorkshopTemplate = ({
   tags,
   gallery,
   title,
+  featuredimage,
   helmet
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-8">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <PreviewCompatibleImage imageInfo={featuredimage} />
+
             <PostContent content={content} />
             <div className="tile is-ancestor">
               <div className="tile is-vertical">
@@ -85,6 +88,7 @@ const Workshop = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         gallery={post.frontmatter.gallery}
+        featuredimage={post.frontmatter.featuredimage}
         upcoming={post.frontmatter.upcoming}
         previous={post.frontmatter.previous}
         helmet={
@@ -119,6 +123,13 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 920, quality: 70) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         description
         gallery {
           image {

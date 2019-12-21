@@ -55,6 +55,4 @@ Intended for anyone new to IoT or even programming in general. No experience req
 
 <iframe src="https://www.icloud.com/keynote/0olbp4vA2S3frjDNOd-oMsJtQ?embed=true" width="640" height="500" frameborder="0" allowfullscreen="1" referrer="no-referrer" class="slideDeck"></iframe>
 
-## Video
-
 ## Photo Gallery

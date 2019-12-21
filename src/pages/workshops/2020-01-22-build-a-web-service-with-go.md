@@ -28,3 +28,22 @@ tags:
 ## Description
 
 Learn the GO programming language by building a simple web application. Go is a great language that is growing in popularity every day, and it's a very good choice for building web services. This workshop is designed to introduce you to the language by building a realistic web application together. This event is great for getting an introduction to GO and learning what it's all about. No experience is required.
+
+## Experience Level
+
+Intended for students with some coding experience, but new to ReactJS Web framework.
+
+## Programming Languages used in the course.
+
+- GO
+
+## Prerequisites
+
+The things you will need to participate in the course, if you have trouble with any of them don't worry we can help you get set up at the workshop.
+
+- A laptop (Windows, macOS, or Linux).
+- [Install GO](https://golang.org/doc/install)
+
+## Course Materials
+
+[GitHub Repo](https://github.com/codeworkshop-dev/go-web-services)

@@ -6,6 +6,7 @@ heading: Upcoming & Recent Workshops
 subheading: Adventure Driven Development Meetups
 mainpitch:
   title: Want to contribute to Code Workshop?
+  image: /img/contribute.jpg
   description: >
     Code Workshop is an open collective of software developers who want to promote the joy of software development and help both new and experienced developers build their skills.  There are lots of ways to contribute.
     If you have ideas for a blog post, a workshop, or would like to be a guest speaker please reach out to us and we will help you get started.
