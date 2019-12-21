@@ -14,6 +14,7 @@ tags:
   - ham radio
   - technology
 ---
+> It's cool to learn about radio waves!
 
 I've always wanted to get my ham radio license. The hobby seemed to have an
 alluring culture full of electronic technical whiz kids and grizzled old
@@ -47,10 +48,6 @@ After a few minutes, someone comes out and pulls you aside to solemnly inform
 you your score, if you pass, congratulations you are a licensed amateur radio
 operator. A few weeks later I was issued a call sign, and was ready to go. It's
 really that easy.
-
-![Dog wearing sunglasses with a radio.](/img/blog/images/radio-dog.jpg)
-
-> It's cool to learn about radio waves!
 
 ## Why get involved with amateur radio?
 

@@ -5,12 +5,13 @@ import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 require("prismjs/themes/prism-tomorrow.css");
 require("prismjs/plugins/line-numbers/prism-line-numbers.css");
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
+  featuredImage,
   tags,
   title,
   helmet
@@ -26,6 +27,12 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: featuredImage,
+                alt: `featured image thumbnail for post ${title}`
+              }}
+            />
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -62,7 +69,7 @@ const BlogPost = ({ data }) => {
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        featuredImage={post.frontmatter.featuredimage}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -96,6 +103,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 80) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         tags
       }
     }

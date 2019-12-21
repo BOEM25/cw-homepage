@@ -12,11 +12,10 @@ languages:
 description: >-
   Join us for our annual Halloween party when the spirits come out to code. Costumes not required, but always appreciated. Celebrate with lightning talks, a Halloweenn hackathon with great prizes, and Open Source Trick-or-Treat goodies and awesome food. 
 upcoming:
+previous:
   - date: 2019-10-30T21:02:20.866Z
     location: The Syn Shop
     url: https://www.meetup.com/code-workshop/events/265049675/
-previous:
-
 gallery:
 
 tags:

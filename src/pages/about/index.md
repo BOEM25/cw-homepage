@@ -4,7 +4,7 @@ path: /about
 title: About our values
 image: /img/values-stuffed-animals.jpeg
 ---
-
+![Welcome to Code Workshop](/static/img/hello.jpg)
 ### Friendly and Fun
 
 Every Code Workshop event is a chance to have fun and explore. Building a great friendly community
@@ -37,3 +37,5 @@ Code Workshop believes in cultivating strong communities, friendships, and teams
 
 As members of the software community we stand on the shoulders of many amazing open source software
 projects, and a core value of our organization is to promote the usage of and contribution to open source software projects.
+
+![Wee hope you will join us in our mission.](/static/img/goodbye.jpg)
