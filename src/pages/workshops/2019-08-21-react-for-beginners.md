@@ -22,6 +22,7 @@ gallery:
 tags:
   - web development
   - react
+  - javascript
 ---
 
 ## Description

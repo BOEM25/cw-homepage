@@ -21,7 +21,7 @@ gallery:
 
 tags:
   - event
-  - Go
+  - go
   - web development
 ---
 
