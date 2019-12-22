@@ -1,5 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables"
-
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap')
 // Config vars
 // Kaldi logo brand color: #FD461E
 $kaldi-red: #D64000
@@ -7,8 +7,7 @@ $kaldi-red-invert: #fff
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
-$black: #2b2523
-
+$black: #0e1112
 .navbar .navbar-menu
   box-shadow: none !important
 
@@ -215,3 +214,54 @@ $menu-label-color: $white-ter
 
   .card-footer
     margin-top: auto
+
+.codeBanner
+  background-color: #0e1112
+  width: 100%
+  height: 400px
+  position: relative
+  background-size: cover
+  background-position: center
+  display: flex
+  justify-content: center
+  align-items: center
+  .pageTitle
+    font-size: 6rem
+    font-weight: 600
+    line-height: 6rem
+    font-family: 'Source Code Pro', monospace
+    color: #fffbfb
+    margin-bottom: 0
+    margin-left: 1rem
+    @media (max-width: 500px)
+      font-size: 2rem
+  span:after
+    content: "_"
+    opacity: 0
+    animation: cursor 1s infinite
+
+  @keyframes cursor
+    0%
+      opacity: 0
+
+    40%
+      opacity: 0
+
+    50%
+      opacity: 1
+
+    90%
+      opacity: 1
+
+    100%
+      opacity: 0
+
+  .pageSubtitle
+    margin-top: .1rem
+    font-size: 3rem
+    font-weight: 600
+    font-family: 'Source Code Pro', monospace
+    color: #f55385
+    margin-left: 1rem
+    @media (max-width: 500px)
+      font-size: 1rem
