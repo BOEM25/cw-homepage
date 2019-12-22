@@ -1,7 +1,7 @@
 ---
 templateKey: workshop
 title: Intro to React Web Apps
-date: 2019-07-15T21:02:20.866Z
+date: 2019-08-21T21:02:20.866Z
 featuredpost: false
 featuredimage: /img/event-banners/react-intro-event.jpg
 author: Stephen Castle
