@@ -47,12 +47,28 @@ export const IndexPageTemplate = ({
       </div>
     </section>
     <section>
-      <PreviewCompatibleImage
-        imageInfo={{
-          image: mainpitch.image,
-          alt: `Contribute to code workshop`
+      <div
+        className="full-width-image-container margin-top-0 email-banner"
+        style={{
+          backgroundImage: `url(${
+            !!mainpitch.image.childImageSharp
+              ? mainpitch.image.childImageSharp.fluid.src
+              : mainpitch.image
+          })`
         }}
-      />
+      >
+        <div className="email-form">
+          <div className="control-panel">
+            <span className="close-button"></span>
+            <span className="min-button"></span>
+            <span className="max-button"></span>
+          </div>
+          <div className="form-container">
+            <input type="text"></input>
+            <button>Sign Up</button>
+          </div>
+        </div>
+      </div>
     </section>
     <section className="section section--gradient">
       <div className="container">
