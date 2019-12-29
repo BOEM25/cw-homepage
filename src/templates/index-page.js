@@ -5,7 +5,7 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
 import WorkshopList from "../components/WorkshopList";
-import BlogRoll from "../components/BlogRoll";
+import BlogRoll from "../components/BlogRollHomePage";
 
 export const IndexPageTemplate = ({
   image,
