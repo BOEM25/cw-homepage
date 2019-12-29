@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import EmailForm from "../components/EmailForm";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
 import WorkshopList from "../components/WorkshopList";
@@ -48,7 +48,7 @@ export const IndexPageTemplate = ({
     </section>
     <section>
       <div
-        className="full-width-image-container margin-top-0 email-banner"
+        className="margin-top-0 email-banner"
         style={{
           backgroundImage: `url(${
             !!mainpitch.image.childImageSharp
@@ -57,17 +57,7 @@ export const IndexPageTemplate = ({
           })`
         }}
       >
-        <div className="email-form">
-          <div className="control-panel">
-            <span className="close-button"></span>
-            <span className="min-button"></span>
-            <span className="max-button"></span>
-          </div>
-          <div className="form-container">
-            <input type="text"></input>
-            <button>Sign Up</button>
-          </div>
-        </div>
+        <EmailForm />
       </div>
     </section>
     <section className="section section--gradient">
