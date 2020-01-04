@@ -171,7 +171,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
-We start by creating a new component called `Light` and this time instead of returning a `mesh` we return a `rectAreaLight`. This type of light has a height, width, color, and intensity. Set them up as seen in the code below, but theen try changing the brightness and color values to see how it impacts your scene. You should see the lighting on your sphere change as you manupulate these values.
+We start by creating a new component called `Light` and this time instead of returning a `mesh` we return a `rectAreaLight`. This type of light has a height, width, color, and intensity. Set them up as seen in the code snippet, but then try changing the brightness and color values to see how it impacts your scene. You should see the lighting on your sphere change as you manipulate these values.
 
 This step also illustrates an important fact about `react-three-fiber`. Because all the objects you are creating are just react components, you can use props just as you would in any other react app. Notice how we pass the brightness and color props in to the light to configure it. You can do this with any parameter.
 
