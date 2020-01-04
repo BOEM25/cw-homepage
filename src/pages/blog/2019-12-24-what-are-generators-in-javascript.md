@@ -6,7 +6,7 @@ featuredpost: false
 published: true
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
-featuredimage: /img/blog-images/generators.jpeg
+featuredimage: /img/blog-images/generators.jpg
 description: >-
   Learn what generators are and how to use them.
 tags:

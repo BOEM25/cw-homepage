@@ -27,12 +27,14 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <PreviewCompatibleImage
-              imageInfo={{
-                image: featuredImage,
-                alt: `featured image thumbnail for post ${title}`
-              }}
-            />
+            <section className="section">
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: featuredImage,
+                  alt: `featured image thumbnail for post ${title}`
+                }}
+              />
+            </section>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>

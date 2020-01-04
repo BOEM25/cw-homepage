@@ -12,7 +12,7 @@ description: >-
 tags:
   - programming
   - javascript
-  - React
+  - react
   - intermediate
   - tutorials
 ---
