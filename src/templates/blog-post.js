@@ -92,8 +92,15 @@ const BlogPost = ({ data }) => {
             <script type="application/ld+json">{`
 { "@context": "https://schema.org", 
 "@type": "BlogPosting",
+"mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "${siteUrl}${post.fields.slug}"
+},
 "headline": "${post.frontmatter.title}",
-"publisher": "Code Workshop",
+"publisher": {
+  "@type": "Organization",
+  "name: "Code Workshop"
+},
 "image": "${siteUrl}${
               post.frontmatter.featuredimage.childImageSharp.fluid.src
             }",
@@ -102,6 +109,7 @@ const BlogPost = ({ data }) => {
 "wordcount": "${post.wordCount.words}",
 "url": "${siteUrl}${post.fields.slug}",
 "datePublished": "${post.frontmatter.date}",
+"dateModified": "${post.frontmatter.date}",
 "description": "${post.frontmatter.description}",
 "author": {
   "@type": "Person",
