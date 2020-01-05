@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
 function EventWidget({ events, title, showBookButton }) {
   return (
@@ -8,12 +8,22 @@ function EventWidget({ events, title, showBookButton }) {
       {(events || []).map(event => (
         <div className="panel-block">
           <div className="column is-8">
-            <a className="" href={event.url} target="_blank">
+            <a
+              className=""
+              href={event.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {event.date} @ {event.location}
             </a>
           </div>
           <div className="column is-4">
-            <a className="" href={event.url} target="_blank">
+            <a
+              className=""
+              href={event.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="button is-link is-outlined is-pulled-right">
                 Details
               </button>

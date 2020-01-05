@@ -59,6 +59,10 @@ class WorkshopList extends React.Component {
                           src={
                             experienceMap[post.frontmatter.experienceLevel].icon
                           }
+                          alt={`Icon representing ${
+                            experienceMap[post.frontmatter.experienceLevel]
+                              .message
+                          }`}
                           className="experienceIcon"
                           data-tip={
                             experienceMap[post.frontmatter.experienceLevel]
@@ -69,6 +73,7 @@ class WorkshopList extends React.Component {
                         {(post.frontmatter.languages || []).map(language => (
                           <img
                             src={languageMap[language]}
+                            alt={`Logo for ${language}`}
                             className="experienceIcon"
                           />
                         ))}

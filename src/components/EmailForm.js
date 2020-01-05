@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-function EmailForm({}) {
+function EmailForm() {
   const [email, setEmail] = useState("");
   const [completed, setCompleted] = useState({ data: {}, status: false });
   const handleSubmit = evt => {

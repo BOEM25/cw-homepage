@@ -34,7 +34,7 @@ class PodcastList extends React.Component {
                       <figure class="image is-48x48">
                         <img
                           src="https://bulma.io/images/placeholders/96x96.png"
-                          alt="Placeholder image"
+                          alt=""
                         />
                       </figure>
                     </div>

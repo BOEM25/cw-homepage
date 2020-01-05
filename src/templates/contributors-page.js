@@ -34,6 +34,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/stephen.jpg`}
+                  alt="Portrait of Stephen Castle"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Stephen Castle</h3>
@@ -43,6 +44,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Justin Hines</h3>
@@ -52,6 +54,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Robert Thompson</h3>
@@ -66,6 +69,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Austin Lambert</h3>
@@ -75,6 +79,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Cameron Tatz</h3>
@@ -89,6 +94,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Richard Hertzog</h3>
@@ -98,6 +104,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Marcus Ulrich</h3>
@@ -107,6 +114,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               <figure class="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
+                  alt="Portrait of a contributor"
                   className="is-rounded"
                 />
                 <h3 className="subtitle is-4">Aditya Jain</h3>
