@@ -101,9 +101,9 @@ ReactDOM.render(<App />, rootElement);
 
 Even though this is a standard react component, because we are using `react-three-fiber`, there are some unique new components available to us to use inside of its render method. Notice the `mesh` component, which has two children, `sphereGeometry` and `meshStandardMaterial`. These three components are only available because the top-level `Canvas` element is providing them via context to all of its children. This is the true power of the react-three-fiber. It translates the three.js API into a React component based API. All three of these are objects from the [three.js WebGL library.](https://threejs.org/) By convention the component is generally named the same as the Three.js version, but with a lower case first letter.
 
-1. https://threejs.org/docs/index.html#api/en/objects/Mesh
-2. https://threejs.org/docs/index.html#api/en/geometries/SphereGeometry
-3. https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial
+1. [Mesh Documentation](https://threejs.org/docs/index.html#api/en/objects/Mesh)
+2. [SphereGeometry](https://threejs.org/docs/index.html#api/en/geometries/SphereGeometry)
+3. [MeshStandardMaterual](https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial)
 
 Notice how in the mesh documentation, to create a new mesh, you need to pass two parameters? A geometry and a material? Under the hood, `react-three-fiber` is translating this component tree into `three.js` function calls and providing the geometry and material children to the mesh. Also, notice that the props of the `mesh`, `sphereGeometry`, and `meshStandardMaterial` match the allowed options for each class in `three.js` To use `react-three-fiber` you often need to refer to the `three.js` documentation.
 
@@ -111,7 +111,7 @@ Notice how in the mesh documentation, to create a new mesh, you need to pass two
 
 Now we have a sphere in our 3d scene, but you're probably wondering why it looks pure black. The sphere is pure dark because our scene has no lights, let's add one next.
 
-1. https://threejs.org/docs/index.html#api/en/lights/RectAreaLight
+1. [RectAreaLight](https://threejs.org/docs/index.html#api/en/lights/RectAreaLight)
 
 ```javascript
 import React from "react";
