@@ -101,7 +101,15 @@ const IndexPage = ({ data }) => {
       "@type": "Organization",
       "name": "Code Workshop",
       "url": "https://codeworkshop.dev",
-      "logo": "https://codeworkshop.dev/img/codeworkshop-logo.jpg"
+      "sameAs" : [ "https://facebook.com/workshopcode",
+      "https://twitter.com/workshopcode",
+      "https://instagram.com/codeworkshop"],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://codeworkshop.dev/img/codeworkshop-logo.png",
+        "width": 303,
+        "height": 231
+      }
     }
   `}</script>
       </Helmet>

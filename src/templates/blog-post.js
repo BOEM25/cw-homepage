@@ -101,7 +101,12 @@ const BlogPost = ({ data }) => {
   "@type": "Organization",
   "name": "Code Workshop",
   "url": "https://codeworkshop.dev",
-  "logo": "https://codeworkshop.dev/img/codeworkshop-logo.jpg"
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://codeworkshop.dev/img/codeworkshop-logo.png",
+    "width": 303,
+    "height": 231
+  }
 },
 "image": "${siteUrl}${
               post.frontmatter.featuredimage.childImageSharp.fluid.src
