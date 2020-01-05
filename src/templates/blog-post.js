@@ -89,6 +89,26 @@ const BlogPost = ({ data }) => {
               property="og:image"
               content={`${siteUrl}${post.frontmatter.featuredimage.childImageSharp.fluid.src}`}
             />
+            <script type="application/ld+json">{`
+{ "@context": "https://schema.org", 
+"@type": "BlogPosting",
+"headline": "${post.frontmatter.title}",
+"publisher": "Code Workshop",
+"image": "${siteUrl}${
+              post.frontmatter.featuredimage.childImageSharp.fluid.src
+            }",
+"genre": "programming and software development", 
+"keywords": "${post.frontmatter.tags.join(" ")}",
+"wordcount": "${post.wordCount.words}",
+"url": "${siteUrl}${post.fields.slug}",
+"datePublished": "${post.frontmatter.date}",
+"description": "${post.frontmatter.description}",
+"author": {
+  "@type": "Person",
+  "name": "${post.frontmatter.author}"
+}
+}
+  `}</script>
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -111,11 +131,14 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      wordCount {
+        words
+      }
       fields {
         slug
       }
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         title
         author
         description

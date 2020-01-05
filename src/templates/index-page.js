@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import Helmet from "react-helmet";
 import EmailForm from "../components/EmailForm";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
@@ -93,6 +94,15 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <script type="application/ld+json">{`
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Code Workshop"
+    }
+  `}</script>
+      </Helmet>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
