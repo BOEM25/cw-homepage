@@ -100,6 +100,7 @@ const BlogPost = ({ data }) => {
 "publisher": {
   "@type": "Organization",
   "name": "Code Workshop",
+  "url": "https://codeworkshop.dev",
   "logo": "https://codeworkshop.dev/img/codeworkshop-logo.jpg"
 },
 "image": "${siteUrl}${

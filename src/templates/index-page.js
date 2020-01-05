@@ -100,6 +100,7 @@ const IndexPage = ({ data }) => {
       "@context": "http://schema.org",
       "@type": "Organization",
       "name": "Code Workshop",
+      "url": "https://codeworkshop.dev",
       "logo": "https://codeworkshop.dev/img/codeworkshop-logo.jpg"
     }
   `}</script>
