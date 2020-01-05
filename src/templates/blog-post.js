@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
+import useSiteMetadata from "../components/SiteMetadata";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
@@ -65,7 +66,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
-
+  const { siteUrl } = useSiteMetadata();
   return (
     <Layout>
       <BlogPostTemplate
@@ -78,6 +79,15 @@ const BlogPost = ({ data }) => {
             <meta
               name="description"
               content={`${post.frontmatter.description}`}
+            />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={post.frontmatter.title} />
+            <meta property="article:author" content={post.frontmatter.author} />
+            <meta property="og:url" content={`${siteUrl}${post.fields.slug}`} />
+
+            <meta
+              property="og:image"
+              content={`${siteUrl}${post.frontmatter.featuredimage.childImageSharp.fluid.src}`}
             />
           </Helmet>
         }
@@ -101,9 +111,13 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        author
         description
         featuredimage {
           childImageSharp {
