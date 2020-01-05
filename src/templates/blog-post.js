@@ -99,7 +99,8 @@ const BlogPost = ({ data }) => {
 "headline": "${post.frontmatter.title}",
 "publisher": {
   "@type": "Organization",
-  "name": "Code Workshop"
+  "name": "Code Workshop",
+  "logo": "https://codeworkshop.dev/img/codeworkshop-logo.jpg"
 },
 "image": "${siteUrl}${
               post.frontmatter.featuredimage.childImageSharp.fluid.src

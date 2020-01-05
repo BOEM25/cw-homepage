@@ -99,7 +99,8 @@ const IndexPage = ({ data }) => {
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "name": "Code Workshop"
+      "name": "Code Workshop",
+      "logo": "https://codeworkshop.dev/img/codeworkshop-logo.jpg"
     }
   `}</script>
       </Helmet>
