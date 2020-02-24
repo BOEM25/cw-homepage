@@ -1,14 +1,14 @@
 ---
 templateKey: blog-post
 title: Automating the DJI Tello Drone with GO
-date: 2019-12-31T21:02:20.866Z
+date: 2020-02-26T21:02:20.866Z
 featuredpost: false
-published: false
+published: true
 author: Stephen Castle
 authorimage: /img/contributors/stephen.jpg
-featuredimage: /img/blog-images/three-point-lighting.jpg
+featuredimage: /img/blog-images/drone.jpg
 description: >-
-  React three fiber is a powerful library allowing you to leverage the awesome declarative UI model of React to create Three.JS WebGL scenes.
+  You'll be amazed how easy it is to fly a drone with Go and Gobot on your side.
 tags:
   - programming
   - beginner
@@ -20,9 +20,25 @@ tags:
 
 ## Using the Gobot Library to control physical devices
 
-## First Flight: Taking off and Landing
+To get started, we will need to have Go installed, set up a new project, and install GoBot as a dependency of that project.
 
-Let's write our first program to control the Tello. We will start simple by initiating a take off, waiting 5 seconds and then landing again.
+### Installing Go
+
+Follow the instructions for your operating system on the Go Getting Started guide to install Go.
+https://golang.org/doc/install
+
+### Creating a New Project
+
+Create a new directory, and from inside that directory run `go mod init gobot-project`
+
+### Installing GoBot
+
+From inside your project directory again, run:
+`go get go get -d -u gobot.io/x/gobot/...`
+
+## First Flight: Take off and Landing
+
+Let's write our first program to control the Tello. We will start simply by initiating a takeoff, waiting 5 seconds, and then landing again.
 
 ```go
   package main
@@ -58,6 +74,96 @@ Let's write our first program to control the Tello. We will start simple by init
   }
 ```
 
+Notice what we are doing here. First, we set up the device driver by calling `tello.NewDriver` with a port number and assigning the result to drone.
+Next, we declare a function called work; this is where we script out the actions for our drone to perform. Actions are initiated by calling methods on the drone
+instance we set up in the first step. To introduce a timed delay, we can use a helper method included with Gobot called `gobot.After`. This function takes two parameters, a time in milliseconds, and a callback to execute after the time has elapsed. In our case, we wait 5 seconds then call `Land()` on our drone to land.
+
 ## Flying around
 
+After setting up a takeoff and landing, flying around is just as easy. We just need to use a few new methods available on our drone object.
+
+```go
+  package main
+
+  import (
+    "fmt"
+    "time"
+
+    "gobot.io/x/gobot"
+    "gobot.io/x/gobot/platforms/dji/tello"
+  )
+
+  func main() {
+    // Connect to the Tello and store an instance of the connection to a variable.
+    // You can use this variable to issue commands to your drone.
+    drone := tello.NewDriver("8888")
+
+    work := func() {
+      drone.TakeOff()
+      //highlight-start
+      drone.Forward(10)
+      drone.Backward(10)
+      //highlight-end
+      gobot.After(5*time.Second, func() {
+        drone.Land()
+      })
+    }
+
+    robot := gobot.NewRobot("tello",
+      []gobot.Connection{},
+      []gobot.Device{drone},
+      work,
+    )
+
+    robot.Start()
+  }
+```
+
+As a demonstration, we are just going to fly forward ten steps and then fly back ten steps to our starting point. Feel free to try more exciting combinations here. For a list of all the possible commands,
+visit the API documentation for the GoBot Tello device driver here. https://godoc.org/gobot.io/x/gobot/platforms/dji/tello#Driver
+
 ## Stunt Flying: Do a Barrell Roll
+
+To wrap things up, let's try executing a trick. So it turns out that even though this looks impressive, it's incredibly easy to pull off. This is because the Tello drone
+already has a command baked in that can execute the maneuver. We only need to trigger it! Nevertheless, it's a cool capstone to our introduction to scripting the DJI Tello drone with Gobot.
+
+```go
+  package main
+
+  import (
+    "fmt"
+    "time"
+
+    "gobot.io/x/gobot"
+    "gobot.io/x/gobot/platforms/dji/tello"
+  )
+
+  func main() {
+    // Connect to the Tello and store an instance of the connection to a variable.
+    // You can use this variable to issue commands to your drone.
+    drone := tello.NewDriver("8888")
+
+    work := func() {
+      drone.TakeOff()
+      //highlight-start
+      drone.FrontFlip()
+      //highlight-end
+      gobot.After(5*time.Second, func() {
+        drone.Land()
+      })
+    }
+
+    robot := gobot.NewRobot("tello",
+      []gobot.Connection{},
+      []gobot.Device{drone},
+      work,
+    )
+
+    robot.Start()
+  }
+```
+
+The only new thing here is calling `drone.FrontFlip()`, and just like that, our little drone is doing acrobatics! I hope this quick intro sparked your imagination, and you are excited
+to come up with some new and unique projects to do with this great tool kit. If you don't have the Tello drone, don't worry because
+everything we learned here is easily transferrable to the many other devices GoBot can control. So why not have a look at
+the GoBot documentation and find the project that's right for you. https://gobot.io/
