@@ -36,6 +36,13 @@ Create a new directory, and from inside that directory run `go mod init gobot-pr
 From inside your project directory again, run:
 `go get go get -d -u gobot.io/x/gobot/...`
 
+### Connecting to the Tello Drone
+
+You will need a Tello drone to follow along with this article, they currently cost about 100 dollars and are a cool little toy to experiment with. If you don't have one though
+you can check out some of the many other devices that Gobot can control. https://gobot.io/
+
+If you do have one, connecting to it so that our program can send it commands is as easy as turning on the drone, wait until the light is blue and its in a ready state, and then open the wifi settings on the computer you are using to run the program we will be writing. You should see a wifi network that says something like DJI-TELLO-123. Connect your computer to that wifi network and then you will be ready for your code to take control of the device.
+
 ## First Flight: Take off and Landing
 
 Let's write our first program to control the Tello. We will start simply by initiating a takeoff, waiting 5 seconds, and then landing again.
