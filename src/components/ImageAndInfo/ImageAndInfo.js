@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import PreviewCompatibleImage from '../PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
-const ImageAndInfo = ({ title, body, image, side = 'left' }) => (
+const ImageAndInfo = ({ title, body, image, side = "left" }) => (
   <div className="section">
     <div className="columns is-vcentered">
-      {side === 'right' ? (
+      {side === "right" ? (
         <div className="column">
           <div className="content">
             <h2 className="title">{title}</h2>
@@ -17,7 +17,7 @@ const ImageAndInfo = ({ title, body, image, side = 'left' }) => (
       <div className="column">
         <PreviewCompatibleImage imageInfo={image} />
       </div>
-      {side === 'left' ? (
+      {side === "left" ? (
         <div className="column">
           <div className="content">
             <h2 className="title">{title}</h2>
@@ -35,9 +35,9 @@ const ImageAndInfo = ({ title, body, image, side = 'left' }) => (
 ImageAndInfo.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.shape({}).isRequired,
   pageData: PropTypes.shape({}),
-  side: PropTypes.oneOf(['left', 'right'])
+  side: PropTypes.oneOf(["left", "right"])
 };
 
 export default ImageAndInfo;

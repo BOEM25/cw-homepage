@@ -28,10 +28,10 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
     <section className="section section--gradient">
       <div className="container">
         <div className="section has-text-centered">
-          <h2 class="title is-2">Core Team</h2>
+          <h2 className="title is-2">Core Team</h2>
           <div className="columns">
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/stephen.jpg`}
                   alt="Portrait of Stephen Castle"
@@ -41,7 +41,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               </figure>
             </div>
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"
@@ -51,7 +51,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               </figure>
             </div>
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"
@@ -63,10 +63,10 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
           </div>
         </div>
         <div className="section has-text-centered">
-          <h2 class="title is-2">Regular Contributors</h2>
+          <h2 className="title is-2">Regular Contributors</h2>
           <div className="columns">
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"
@@ -76,7 +76,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               </figure>
             </div>
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"
@@ -88,10 +88,10 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
           </div>
         </div>
         <div className="section has-text-centered">
-          <h2 class="title is-2">Supporters</h2>
+          <h2 className="title is-2">Supporters</h2>
           <div className="columns">
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"
@@ -101,7 +101,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               </figure>
             </div>
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"
@@ -111,7 +111,7 @@ export const WorkshopsPageTemplate = ({ image, title }) => (
               </figure>
             </div>
             <div className="column is-3">
-              <figure class="image">
+              <figure className="image">
                 <img
                   src={`/img/contributors/placeholder.jpeg`}
                   alt="Portrait of a contributor"

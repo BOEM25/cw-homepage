@@ -30,8 +30,8 @@ class ContributorList extends React.Component {
                 ) : null}
                 <div className="card-content">
                   <div className="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
+                    <div className="media-left">
+                      <figure className="image is-48x48">
                         <img
                           src="https://bulma.io/images/placeholders/96x96.png"
                           alt="Placeholder image"
@@ -48,7 +48,7 @@ class ContributorList extends React.Component {
                     <p>{post.excerpt}</p>
                   </div>
                 </div>
-                <footer class="card-footer">
+                <footer className="card-footer">
                   <Link className="card-footer-item" to={post.fields.slug}>
                     Scheduled Times and Syllabus →
                   </Link>
