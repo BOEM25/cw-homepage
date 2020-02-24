@@ -46,13 +46,13 @@ class WorkshopList extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
-              <Link className="card-footer-item" to={post.fields.slug}>
-                <article
-                  className={`card ${
-                    post.frontmatter.featuredpost ? "is-featured" : ""
-                  }`}
-                >
-                  {post.frontmatter.featuredimage ? (
+              <article
+                className={`card ${
+                  post.frontmatter.featuredpost ? "is-featured" : ""
+                }`}
+              >
+                {post.frontmatter.featuredimage ? (
+                  <Link className="" to={post.fields.slug}>
                     <div className="card-image">
                       <div className="iconBar">
                         <img
@@ -73,6 +73,7 @@ class WorkshopList extends React.Component {
                         {(post.frontmatter.languages || []).map(language => (
                           <img
                             src={languageMap[language]}
+                            key={language}
                             alt={`Logo for ${language}`}
                             className="experienceIcon"
                           />
@@ -85,41 +86,45 @@ class WorkshopList extends React.Component {
                         }}
                       />
                     </div>
-                  ) : null}
-                  <div className="card-content">
-                    <div className="media wrap">
-                      <div class="media-left">
-                        <figure class="image is-48x48">
-                          <PreviewCompatibleImage
-                            imageInfo={{
-                              image: post.frontmatter.authorimage,
-                              alt: `author thumbnail for event ${post.title}`
-                            }}
-                          />
-                        </figure>
-                      </div>
-                      <div className="media-content">
+                  </Link>
+                ) : null}
+                <div className="card-content">
+                  <div className="media wrap">
+                    <div className="media-left">
+                      <figure className="image is-48x48">
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: post.frontmatter.authorimage,
+                            alt: `author thumbnail for event ${post.title}`
+                          }}
+                        />
+                      </figure>
+                    </div>
+                    <div className="media-content">
+                      <Link className="" to={post.fields.slug}>
                         <p className="title is-4">{post.frontmatter.title}</p>
-                        <p className="subtitle is-6">{post.frontmatter.date}</p>
-                      </div>
-                    </div>
-
-                    <div className="content">
-                      <p>{post.frontmatter.description}</p>
-                    </div>
-                    <div className="tags">
-                      {post.frontmatter.tags.map(tag => (
-                        <span className="tag is-danger">{tag}</span>
-                      ))}
+                      </Link>
+                      <p className="subtitle is-6">{post.frontmatter.date}</p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <Link className="card-footer-item" to={post.fields.slug}>
-                      Scheduled Times and Syllabus →
-                    </Link>
-                  </footer>
-                </article>
-              </Link>
+
+                  <div className="content">
+                    <p>{post.frontmatter.description}</p>
+                  </div>
+                  <div className="tags">
+                    {post.frontmatter.tags.map(tag => (
+                      <span className="tag is-danger" key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <footer className="card-footer">
+                  <Link className="card-footer-item" to={post.fields.slug}>
+                    Scheduled Times and Syllabus →
+                  </Link>
+                </footer>
+              </article>
             </div>
           ))}
       </div>

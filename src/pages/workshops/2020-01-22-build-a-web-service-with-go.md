@@ -12,11 +12,13 @@ languages:
 description: >-
   Go is a great programming language for writing web servers.  Learn how to write a web application using Go. In this class we will get an introduction to the language and some best practices for writing web services using the awesome Go programming language.
 upcoming:
-  - date: 2020-01-22T21:02:20.866Z
+  - date: 2020-05-20T21:02:20.866Z
     location: The Syn Shop
     url: https://www.meetup.com/code-workshop/events/267053829
 previous:
-
+  - date: 2020-01-22T21:02:20.866Z
+    location: The Syn Shop
+    url: https://www.meetup.com/code-workshop/events/267053829
 gallery:
 
 tags:

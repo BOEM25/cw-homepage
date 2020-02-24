@@ -34,8 +34,8 @@ class BlogRollHomepage extends React.Component {
                 ) : null}
                 <div className="card-content">
                   <div className="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
+                    <div className="media-left">
+                      <figure className="image is-48x48">
                         <PreviewCompatibleImage
                           imageInfo={{
                             image: post.frontmatter.authorimage,
@@ -58,13 +58,13 @@ class BlogRollHomepage extends React.Component {
                   </div>
                   <div className="tags">
                     {post.frontmatter.tags.map(tag => (
-                      <span className="tag is-danger">
+                      <span className="tag is-danger" key={tag}>
                         <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                       </span>
                     ))}
                   </div>
                 </div>
-                <footer class="card-footer">
+                <footer className="card-footer">
                   <Link className="card-footer-item" to={post.fields.slug}>
                     Read More →
                   </Link>

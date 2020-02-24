@@ -11,7 +11,7 @@ description: >-
   You'll be amazed how easy it is to fly a drone with Go and Gobot on your side.
 tags:
   - programming
-  - beginner
+  - beginners
   - go
   - robotics
   - drones
@@ -127,7 +127,7 @@ After setting up a takeoff and landing, flying around is just as easy. We just n
 ```
 
 As a demonstration, we are just going to fly forward ten steps and then fly back ten steps to our starting point. Feel free to try more exciting combinations here. For a list of all the possible commands,
-visit the API documentation for the GoBot Tello device driver here. https://godoc.org/gobot.io/x/gobot/platforms/dji/tello#Driver
+visit the API documentation for the GoBot Tello device driver [here.](https://godoc.org/gobot.io/x/gobot/platforms/dji/tello#Driver)
 
 ## Stunt Flying: Do a Barrell Roll
 
