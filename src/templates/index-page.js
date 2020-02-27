@@ -48,16 +48,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
     <section>
-      <div
-        className="margin-top-0 email-banner"
-        style={{
-          backgroundImage: `url(${
-            !!mainpitch.image.childImageSharp
-              ? mainpitch.image.childImageSharp.fluid.src
-              : mainpitch.image
-          })`
-        }}
-      >
+      <div className="margin-top-0 email-banner">
         <EmailForm />
       </div>
     </section>

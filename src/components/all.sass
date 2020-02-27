@@ -131,10 +131,10 @@ $menu-label-color: $white-ter
 @import "~bulma"
 
 // responsiveness
-+tablet-only
+  +tablet-only
   .blog-list-item .featured-thumbnail
     flex-basis: 50%
-+mobile
+    +mobile
   .blog-list-item header
     display: block
   .blog-list-item .featured-thumbnail
@@ -270,24 +270,29 @@ $menu-label-color: $white-ter
   position: relative
   left: 50%
   right: 50%
-  margin: 2em -50vw
+  margin: 5em -50vw
   background-size: cover
   background-position: center
   display: flex
   justify-content: center
   align-items: center
+  background-image: linear-gradient(45deg, #6303B1, #ff0099);
+  transform: skewY(-11deg)
 
   .email-form
-    padding: 40px
+    padding: 40px 0
     background-color: #021527
     border-radius: 8px
-    height: 240px
-    width: 60%
     position: relative
     display: flex
     flex-wrap: wrap
+    flex-direction: column
     align-items: center
     justify-content: center
+    width: 60%;
+    transform: skewY(11deg)
+    label
+      color: white
     @media (max-width: 500px)
       width: 95%
   .control-panel
@@ -312,14 +317,15 @@ $menu-label-color: $white-ter
     max-width: 300px
     h2
       font-size: 2rem
+      line-height: 1.9rem
+      margin-bottom: 2rem
       color: white
     h3
       color: white
   .form-container
-    max-width: 300px
-    margin: 8px 0
-    flex: 1 1 0
+    margin: 1rem auto
     display: flex
+    box-sizing: border-box
 
     input
       padding: 12px 16px 10px

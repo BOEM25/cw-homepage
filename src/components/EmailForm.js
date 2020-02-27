@@ -35,17 +35,13 @@ function EmailForm() {
       )}
       {!completed.status && (
         <>
-          <div className="msg-container">
-            <h2> Join Code Workshp</h2>
-            <h3>
-              Become a member of Code Workshop for free programming tutorials,
-              news, special event access, and more sent to your email.
-            </h3>
-          </div>
+          <label for="email-signup">Sign up For the Mailing List</label>
           <div className="form-container">
             <input
               type="text"
               value={email}
+              id="email-signup"
+              placeholder="Email"
               onChange={v => setEmail(v.target.value)}
             ></input>
             <button onClick={handleSubmit}>Sign Up</button>
