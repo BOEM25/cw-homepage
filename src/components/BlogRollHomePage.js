@@ -37,6 +37,7 @@ class BlogRollHomepage extends React.Component {
                     <div className="media-left">
                       <figure className="image is-48x48">
                         <PreviewCompatibleImage
+                          isRounded
                           imageInfo={{
                             image: post.frontmatter.authorimage,
                             alt: `image of author for post ${post.title}`
@@ -47,7 +48,7 @@ class BlogRollHomepage extends React.Component {
 
                     <div className="media-content">
                       <Link className="" to={post.fields.slug}>
-                        <p className="title is-4">{post.frontmatter.title}</p>
+                        <h3 className="title is-4">{post.frontmatter.title}</h3>
                       </Link>
                       <p className="subtitle is-6">{post.frontmatter.date}</p>
                     </div>

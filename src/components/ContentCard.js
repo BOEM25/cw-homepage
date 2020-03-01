@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import React from "react";
+import { Link } from "gatsby";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export default function ContentCard({ post }) {
   return (
@@ -8,7 +8,7 @@ export default function ContentCard({ post }) {
       <Link className="card-footer-item" to={post.fields.slug}>
         <article
           className={`card ${
-            post.frontmatter.featuredpost ? 'is-featured' : ''
+            post.frontmatter.featuredpost ? "is-featured" : ""
           }`}
         >
           {post.frontmatter.featuredimage ? (
@@ -26,6 +26,7 @@ export default function ContentCard({ post }) {
               <div class="media-left">
                 <figure class="image is-48x48">
                   <PreviewCompatibleImage
+                    isRounded
                     imageInfo={{
                       image: post.frontmatter.authorimage,
                       alt: `image of author for post ${post.title}`
@@ -34,7 +35,7 @@ export default function ContentCard({ post }) {
                 </figure>
               </div>
               <div className="media-content">
-                <p className="title is-4">{post.frontmatter.title}</p>
+                <h3 className="title is-4">{post.frontmatter.title}</h3>
                 <p className="subtitle is-6">{post.frontmatter.date}</p>
               </div>
             </div>

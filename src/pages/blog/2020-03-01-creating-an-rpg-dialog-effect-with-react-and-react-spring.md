@@ -48,6 +48,7 @@ sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 
 # Designing our Dialog Box Component
 
+b
 Our dialog box will have three main parts: The name of the speaker, the message itself, and a footer where we can place a button the player can use to continue to the next message. We could also show a portrait of the character speaking but we'll leave that for later.
 ​
 
@@ -101,7 +102,7 @@ This is the basic structure of our dialog box, notice that we are just using a p
 }
 ```
 
-You can use the CSS property [`border-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image) to acheive the classic pixel art border effect. The `border-image` property allows you to define parts of an image to use as the border of an html element.
+You can use the CSS property [border-image](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image) to acheive the classic pixel art border effect. The `border-image` property allows you to define parts of an image to use as the border of an html element.
 ​
 
 ## Adding State and Creating the Messages
