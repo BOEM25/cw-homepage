@@ -68,6 +68,7 @@ export const tagPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             featuredpost
             description
+            tags
             authorimage {
               childImageSharp {
                 fluid(maxWidth: 160, quality: 100) {

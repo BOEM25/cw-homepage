@@ -11,7 +11,7 @@ export const BlogPageTemplate = ({
   description,
   intro
 }) => (
-  <div className="content">
+  <div className="">
     <div
       className="full-width-image-container margin-top-0"
       style={{

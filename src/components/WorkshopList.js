@@ -93,6 +93,7 @@ class WorkshopList extends React.Component {
                     <div className="media-left">
                       <figure className="image is-48x48">
                         <PreviewCompatibleImage
+                          isRounded
                           imageInfo={{
                             image: post.frontmatter.authorimage,
                             alt: `author thumbnail for event ${post.title}`

@@ -5,54 +5,69 @@ import Helmet from "react-helmet";
 import useSiteMetadata from "../components/SiteMetadata";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
+import AuthorCard from "../components/AuthorCard";
+import EmailForm from "../components/EmailForm";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 require("prismjs/themes/prism-tomorrow.css");
 require("prismjs/plugins/line-numbers/prism-line-numbers.css");
 export const BlogPostTemplate = ({
   content,
+  date,
   contentComponent,
   featuredImage,
   tags,
+  author,
+  authorImage,
   title,
   helmet
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container article-container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <section className="section">
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: featuredImage,
-                  alt: `featured image thumbnail for post ${title}`
-                }}
+    <>
+      <section className="section">
+        {helmet || ""}
+        <div className="container article-container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+              <AuthorCard
+                authorImage={authorImage}
+                authorName={author}
+                date={date}
               />
-            </section>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+              <section className="section">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: featuredImage,
+                    alt: `featured image thumbnail for post ${title}`
+                  }}
+                />
+              </section>
+              <PostContent content={content} className="content" />
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }} className="content">
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map(tag => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
+      </section>
+      <div className="margin-top-0 email-banner">
+        <EmailForm />
       </div>
-    </section>
+    </>
   );
 };
 
@@ -73,6 +88,9 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         featuredImage={post.frontmatter.featuredimage}
+        author={post.frontmatter.author}
+        date={post.frontmatter.date}
+        authorImage={post.frontmatter.authorimage}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -153,9 +171,16 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "MMMM D, YYYY")
         title
         author
+        authorimage {
+          childImageSharp {
+            fluid(maxWidth: 160, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         description
         featuredimage {
           childImageSharp {
