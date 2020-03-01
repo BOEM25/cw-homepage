@@ -48,7 +48,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
     <section>
-      <div className="margin-top-0 email-banner">
+      <div className="margin-top-0 email-banner slanted">
         <EmailForm />
       </div>
     </section>

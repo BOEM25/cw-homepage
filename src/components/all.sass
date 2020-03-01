@@ -270,14 +270,13 @@ $menu-label-color: $white-ter
   position: relative
   left: 50%
   right: 50%
-  margin: 5em -50vw
+  margin: 0 -50vw
   background-size: cover
   background-position: center
   display: flex
   justify-content: center
   align-items: center
   background-image: linear-gradient(45deg, #6303B1, #ff0099);
-  transform: skewY(-11deg)
 
   .email-form
     padding: 40px 0
@@ -291,7 +290,6 @@ $menu-label-color: $white-ter
     align-items: center
     justify-content: center
     width: 60%;
-    transform: skewY(11deg)
     label
       color: white
     @media (max-width: 500px)
@@ -350,6 +348,13 @@ $menu-label-color: $white-ter
       text-align: center
       transition: all .15s ease
       border: none
+
+.slanted
+  margin-bottom: 5rem
+  transform: skewY(-11deg)
+  .email-form
+    transform: skewY(11deg)
+
 .media
   .media-content
   .authorName
@@ -365,4 +370,4 @@ $menu-label-color: $white-ter
     font-size: .8rem
     font-weight: 500
     line-height: 1.6rem
-    color: #a29191
+    color: #5288ff

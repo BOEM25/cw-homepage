@@ -6,6 +6,7 @@ import useSiteMetadata from "../components/SiteMetadata";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import AuthorCard from "../components/AuthorCard";
+import EmailForm from "../components/EmailForm";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 require("prismjs/themes/prism-tomorrow.css");
@@ -24,44 +25,49 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container article-container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <AuthorCard
-              authorImage={authorImage}
-              authorName={author}
-              date={date}
-            />
-            <section className="section">
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: featuredImage,
-                  alt: `featured image thumbnail for post ${title}`
-                }}
+    <>
+      <section className="section">
+        {helmet || ""}
+        <div className="container article-container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+              <AuthorCard
+                authorImage={authorImage}
+                authorName={author}
+                date={date}
               />
-            </section>
-            <PostContent content={content} className="content" />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }} className="content">
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+              <section className="section">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: featuredImage,
+                    alt: `featured image thumbnail for post ${title}`
+                  }}
+                />
+              </section>
+              <PostContent content={content} className="content" />
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }} className="content">
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map(tag => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
+      </section>
+      <div className="margin-top-0 email-banner">
+        <EmailForm />
       </div>
-    </section>
+    </>
   );
 };
 
