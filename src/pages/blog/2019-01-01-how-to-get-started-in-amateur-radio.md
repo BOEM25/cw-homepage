@@ -14,6 +14,7 @@ tags:
   - ham radio
   - technology
 ---
+
 > It's cool to learn about radio waves!
 
 I've always wanted to get my ham radio license. The hobby seemed to have an
@@ -41,7 +42,7 @@ collect the test fee, check everyone's ID, grade the completed tests, and fill
 out the FCC paperwork that makes up your actual application. After a few minutes
 they called us up, gave us our test booklets and the test was begun. Once
 finished and handed in to the earnest tribunal of volunteer examiners they will
-ask you to step outside while three seperate people score the exam for
+ask you to step outside while three separate people score the exam for
 redundancy purposes I guess.
 
 After a few minutes, someone comes out and pulls you aside to solemnly inform
