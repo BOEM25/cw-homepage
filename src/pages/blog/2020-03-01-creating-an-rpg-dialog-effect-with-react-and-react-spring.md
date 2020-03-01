@@ -23,14 +23,14 @@ tags:
 >
 > ## Topics Covered
 >
-> 1.  Pixel Art Style Look using the CSS border image property
+> 1.  Pixel Art Style Look using the CSS border-image property
 > 2.  Using React Spring to create an RPG style dialog text effect.
 
-This is the first article in a series on developing browser based games using React. We will learn how to achieve game-like UI and visuals by building a series of game features one at a time and tying them together to create a real game. We'll start simply by creating a dialog box UI to use in our game. This will help us get familiar with using `react` and the `react-spring` library for animation. Enjoy!
+This is the first article in a series on developing a browser-based game using React. We will learn how to achieve game-like UI and visuals by building a series of game features one at a time and tying them together to create a real game. We'll start simply by creating a dialog box UI to use in our game. This will help us get familiar with using `react` and the `react-spring` library for animation. Enjoy!
 
 ## Building Our First Game Feature
 
-So you want to build a browser based RPG with amazing visuals, mechanics and story! But there's an issue, your awesome characters are trying to talk but don't have any way to communicate! Well what better way for your characters to express your witty dialogue than through a classic RPG Dialog box. Below is a finished version of what we are going to build together. You can refer back to it as you go if you get lost.
+So you want to build a browser-based RPG with amazing visuals, mechanics, and story! But there's an issue, your awesome characters are trying to talk but don't have any way to communicate! Well, what better way for your characters to express your witty dialogue than through a classic RPG Dialog box. Below is a finished version of what we are going to build together. You can refer back to it as you go if you get lost.
 
 <iframe
 src="https://codesandbox.io/embed/cams-dialog-box-hpl38?fontsize=14&hidenavigation=1&theme=dark"
@@ -48,7 +48,6 @@ sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
 
 # Designing our Dialog Box Component
 
-b
 Our dialog box will have three main parts: The name of the speaker, the message itself, and a footer where we can place a button the player can use to continue to the next message. We could also show a portrait of the character speaking but we'll leave that for later.
 ​
 
@@ -102,7 +101,7 @@ This is the basic structure of our dialog box, notice that we are just using a p
 }
 ```
 
-You can use the CSS property [border-image](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image) to acheive the classic pixel art border effect. The `border-image` property allows you to define parts of an image to use as the border of an html element.
+You can use the CSS property [border-image](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image) to achieve the classic pixel art border effect. The `border-image` property allows you to define parts of an image to use as the border of an html element.
 ​
 
 ## Adding State and Creating the Messages
@@ -118,7 +117,7 @@ import "./styles.css";
 
 // Just hard coding these for now to demonstrate our DialogBox component.
 const messages = [
-  "This is a very cool rpg dialog message.",
+  "This is a very cool RPG dialog message.",
   "If you would like to see more awesome stuff, check out the other writeups at codeworkshop.dev!",
   "Remember to wash your hands!"
 ];
@@ -132,20 +131,18 @@ export default function App() {
 }
 ```
 
-Then in our dialog box add some state to keep track of which message we should be displaying.
+Then in our dialog box, add some state to keep track of which message we should be displaying.
 
 ```javascript
 // DialogBox.js
-import React, { useState } from "react";
+import React, { useState } from "react"; //highlight-line
 
-import "./styles.css";
+import "./styles.css"; //highlight-line
 
 const Message = () => <div />;
-// start-highlight
 
-// end-highlight
 const DialogBox = () => {
-  // start-highlight
+  //highlight-start
   const [currentMessage, setCurrentMessage] = useState(0);
   const handleClick = () => {
     if (currentMessage < messages.length - 1) {
@@ -154,7 +151,7 @@ const DialogBox = () => {
       setCurrentMessage(0);
     }
   };
-  // end-highlight
+  //highlight-end
   return (
     <div className="DialogBox">
       // Notice the speaker's name is hard coded. Can you make changes to
@@ -174,7 +171,7 @@ Now we can keep track of which message to display, and provide a function for ch
 
 ## Animated Typewriter Effect
 
-Alright, now we come to the meat and potatoes of our DialogBox. Adding the animated type-writer effect to the `Message` component using `react-spring`. React Spring is such a powerful animation library specifically because it let's us animate just about anything you can assign a value to.
+All right, now we come to the meat and potatoes of our DialogBox. Adding the animated typewriter effect to the `Message` component using `react-spring`. React Spring is such a powerful animation library specifically because it lets us animate just about anything you can assign a value.
 ​
 
 ```javascript
@@ -183,32 +180,32 @@ import  React,  {  useMemo  }  from  "react";
 import  {  animated,  useTransition  }  from  "react-spring";
 ​
 const  Message  =  ({ message })  =>  {
-	const  items  =  useMemo(
-		()  =>
-			message.split("").map((letter,  index)  =>  ({
-				item:  letter,
-				key:  `${letter}${index}`
-			})),
-		[message]
-	);
+  const  items  =  useMemo(
+    ()  =>
+      message.split("").map((letter,  index)  =>  ({
+        item:  letter,
+        key:  `${letter}${index}`
+      })),
+    [message]
+  );
 ​
-	const  transitions  =  useTransition(items,  item  =>  item.key,  {
-		trail:  35,
-		from:  { display:  "none"  },
-		enter:  { display:  ""  }
-	});
+  const  transitions  =  useTransition(items,  item  =>  item.key,  {
+    trail:  35,
+    from:  { display:  "none"  },
+    enter:  { display:  ""  }
+  });
 ​
-	return  (
-		<div  className="DialogMessage">
-			{transitions.map(({ item, props, key }) => {
-				return (
-					<animated.span  key={key} style={props}>
-						{item.item}
-					</animated.span>
-				);
-			})}
-		</div>
-	);
+  return  (
+    <div  className="DialogMessage">
+      {transitions.map(({ item, props, key }) => {
+        return (
+          <animated.span  key={key} style={props}>
+            {item.item}
+          </animated.span>
+        );
+      })}
+    </div>
+  );
 };
 export  default  Message;
 ```
@@ -217,10 +214,10 @@ export  default  Message;
 Here we have expanded the `<Message />` component to accept a message as a prop, split it into an array of characters and used `react-spring`'s `useTransition` to animate each character. For more details on how to use `useTransition` visit [React-Springs documentation](https://www.react-spring.io/docs/hooks/use-transition).
 ​
 
-> Note! Keep in mind that you'll need to properly key our `<Message />` component if we're sending it new messages or you'll see some weird effects since react will lose track of the internal character keys. You can see this being achieved in the DialogBox component in the demo. Take out the key attribute if you're curious.
+> Note! Keep in mind that you'll need to properly key our `<Message />` component if we're sending it new messages, or you'll see some weird effects since React loses track of the internal character keys. You can see this being achieved in the DialogBox component in the demo. Take out the key attribute if you're curious.
 > ​
 
 # Final Words and Next Steps
 
 ​
-To make this really useful there are a few other things that we might want to do, like clear the dialog when we get to the last message, or provide a way to control the speed of the text animation. If you take the initiative to add any of these features I'd love to see them. The best place to reach me is on twitter [@camtatz](https://twitter.com/CamTatz). Next time we will take this simple message UI component and combine it with `react-three-fiber` to get closer to an actual game.
+To make this really useful, there are a few other things that we might want to do, like clear the dialog when we get to the last message or provide a way to control the speed of the text animation. If you take the initiative to add any of these features, I'd love to see them. The best place to reach me is on twitter [@camtatz](https://twitter.com/CamTatz). Next time we will take this simple message UI component and combine it with `react-three-fiber` to get closer to an actual game.
