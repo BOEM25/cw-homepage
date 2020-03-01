@@ -26,7 +26,7 @@ tags:
 > 1.  Pixel Art Style Look using the CSS border image property
 > 2.  Using React Spring to create an RPG style dialog text effect.
 
-This is the first article in a series on developing browser based games using React. We will learn how to achieve game-like UI and visuals and some other useful Javascript libraries by building a series of game features one at a time and tying them together to create a real game. We'll start simply by creating a dialog box UI to use in our game. This will help us get familiar with using `react` and the `react-spring` library for animation. Enjoy!
+This is the first article in a series on developing browser based games using React. We will learn how to achieve game-like UI and visuals by building a series of game features one at a time and tying them together to create a real game. We'll start simply by creating a dialog box UI to use in our game. This will help us get familiar with using `react` and the `react-spring` library for animation. Enjoy!
 
 ## Building Our First Game Feature
 
@@ -63,9 +63,9 @@ const Message = () => <div />;
 const DialogBox = () => {
   return (
     <div className="DialogWindow">
-      <div className="DialogTitle">Cameron</div>
+      <div className="dialogTitle">Cameron</div>
       <Message />
-      <div onClick={handleClick} className="DialogFooter">
+      <div onClick={handleClick} className="dialogFooter">
         Next
       </div>
     </div>
@@ -158,7 +158,7 @@ const DialogBox = () => {
     <div className="DialogBox">
       // Notice the speaker's name is hard coded. Can you make changes to
       support different speakers for different messages?
-      <div className="dDialogTitle">Cameron</div>
+      <div className="dialogTitle">Cameron</div>
       <Message message={messages[currentMessage]} key={currentMessage} />
       <div onClick={handleClick} className="dialogFooter">
         Next
