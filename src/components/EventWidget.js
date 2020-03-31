@@ -35,7 +35,7 @@ function EventWidget({ events, title, showBookButton }) {
         <Link to="/contact" className="fullWidth">
           {showBookButton && (
             <button className="button is-link is-outlined is-fullwidth">
-              Book this Workshop
+              Request this Workshop
             </button>
           )}
         </Link>
