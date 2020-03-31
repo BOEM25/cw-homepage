@@ -21,7 +21,7 @@ tags:
   - tutorials
 ---
 
-In this series we will build a fully interactive "Space Fox" game with a ship that can fire lasers, do barrell rolls, and fly through space. In doing so we will touch on many parts of using `react-three-fiber`. animation, camera controls, collision detection and more, but in part one let's start small and just get our ship geometry loaded into React. In this part we will build the below scene which will serve as a starting place for the rest of the series.
+In this series we will build a fully interactive "Space Fox" game with a ship that can fire lasers, do barrell rolls, and fly through space. In doing so we will touch on many parts of using `react-three-fiber`. We will cover animation, camera controls, collision detection and more, but in part one let's start small and just get our ship geometry loaded into React. In this part we will build the below scene which will serve as a starting place for the rest of the series.
 
 <iframe
      src="https://codesandbox.io/embed/stupefied-mestorf-5fvlo?fontsize=14&hidenavigation=1&theme=dark"
