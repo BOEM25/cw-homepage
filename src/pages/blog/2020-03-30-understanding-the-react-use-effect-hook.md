@@ -36,7 +36,7 @@ Feel free to explore the completed example a bit. In the next step, we will deco
 
 ## The EffectCallback Function
 
-Let's right our first useEffect hook, just focus on the highlighted code. You can ignore the boilerplate for mounting and unmounting our component. We will use this later to monitor how our useEffect hook behaves. I recommend starting from the starter sandbox if you want to follow along with the same CSS styles and boilerplate. [Start Here](https://codesandbox.io/s/demo-of-useeffect-hook-starting-point-9c0yk)
+Let's create our first useEffect hook, just focus on the highlighted code. You can ignore the boilerplate for mounting and unmounting our component. We will use this later to monitor how our useEffect hook behaves. I recommend starting from the starter sandbox if you want to follow along with the same CSS styles and boilerplate. [Start Here](https://codesandbox.io/s/demo-of-useeffect-hook-starting-point-9c0yk)
 
 ```javascript
   // highlight-start
