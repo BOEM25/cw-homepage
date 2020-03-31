@@ -16,6 +16,7 @@ tags:
   - react
   - Three.js
   - libraries
+  - react-three-fiber
   - tutorials
 ---
 
