@@ -132,7 +132,7 @@ export default function App() {
 
 ```
 
-If you are wondering where the nodes value being destructured from useLoader comes from, try console logging the entire return value of useLoader without destructuring.
+If you are wondering where the `nodes` value being destructured from useLoader come from, try console logging the entire return value of useLoader without destructuring.
 
 ```
   const scene = useLoader(GLTFLoader, "models/arwing.glb");
