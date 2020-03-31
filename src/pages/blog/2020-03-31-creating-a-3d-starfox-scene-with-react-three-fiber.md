@@ -73,6 +73,7 @@ body,
 ## Getting our Object File Ready for Loading
 
 ThreeJS prefers to load geometry in the glTF format. Since my original ship model was in obj, I used this tool to convert it. https://blackthread.io/gltf-converter/ To save time here is a link to the model file in gltf. If you want to try using your own model though feel free to convert it using the tool and just use it instead of the one I am using.
+[Model File](/models/arwing.glb)
 
 ## Loading an Object With the ThreeJS Loader
 
