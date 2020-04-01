@@ -41,7 +41,7 @@ Let's go through a sample interview problem and follow our steps. This is a real
 
 > ### The Sum of Pairs Problem
 >
-> Given a list of numbers and a number k, return whether true if any two numbers sum to k, and false if there is no combination of numbers that sums to k.
+> Given a list of numbers and a number k, return true if any two numbers in the array sum to k, and false if there is no combination of numbers that sums to k.
 
 > For example, given [12, 13, 4, 3] and k of 7, return true since 4 + 3 is 7.
 
@@ -84,7 +84,7 @@ Make sure the assumption holds if the match is in different parts of the array. 
 # Should Return true if pairs sum: [1,4,7,2] k=5
 ```
 
-In our case, we should consider a few edge cases too. For example, what happens if there is more than one pair of numbers that match? You can bring back any ideas you have about test cases to an interviewer, they might not care if you handle invalid inputs, but it's a good idea to bring it up.
+In our case, we should consider a few edge cases too. For example, what happens if there is more than one pair of numbers that match, and the problem statement said numbers, does that mean just integers or floats too? You should talk through any ideas you have about test cases to an interviewer, they will appreciate your careful consideration to the API and robustness of your solution.
 
 ```
 # Should Work with more than one match: [2,2,4,5, 2] k=4
