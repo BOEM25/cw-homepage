@@ -12,7 +12,7 @@ description: >-
 tags:
   - programming
   - javascript
-  - beginner
+  - beginners
   - react
   - hooks
   - tutorials
