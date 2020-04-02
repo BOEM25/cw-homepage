@@ -3,35 +3,17 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import BlogRoll from "../components/BlogRoll";
+import HeaderTitle from "../components/HeaderTitle";
 
 export const BlogPageTemplate = ({
   image,
   title,
   heading,
   description,
-  intro
+  subtitle
 }) => (
   <div className="">
-    <div
-      className="full-width-image-container margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    >
-      <h2
-        className="has-text-weight-bold is-size-1"
-        style={{
-          boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
-          backgroundColor: "#f40",
-          color: "white",
-          padding: "1rem"
-        }}
-      >
-        {title}
-      </h2>
-    </div>
+    <HeaderTitle title={title} subtitle={subtitle} image={image} />
     <section className="section section--gradient">
       <div className="container">
         <div className="section">

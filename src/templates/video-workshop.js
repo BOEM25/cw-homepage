@@ -1,32 +1,49 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
-import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import EventWidget from "../components/EventWidget";
+import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-export const WorkshopTemplate = ({
+export const VideoWorkshopTemplate = ({
   content,
   contentComponent,
-  description,
+  upcoming,
+  previous,
   tags,
+  gallery,
   title,
+  featuredimage,
   helmet
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column is-8">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
+            <PreviewCompatibleImage imageInfo={featuredimage} />
+
             <PostContent content={content} />
+            <div className="tile is-ancestor">
+              <div className="tile is-vertical">
+                {(gallery || []).map((item, i) => (
+                  <div className="tile is-parent is-vertical">
+                    <article className="tile is-child">
+                      <PreviewCompatibleImage imageInfo={item.image} />
+                    </article>
+                  </div>
+                ))}
+              </div>
+            </div>
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -40,13 +57,21 @@ export const WorkshopTemplate = ({
               </div>
             ) : null}
           </div>
+          <div className="column is-4">
+            <EventWidget
+              events={upcoming}
+              title="Upcoming Events"
+              showBookButton
+            />
+            <EventWidget events={previous} title="Previous Events" />
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-WorkshopTemplate.propTypes = {
+VideoWorkshopTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -54,15 +79,18 @@ WorkshopTemplate.propTypes = {
   helmet: PropTypes.object
 };
 
-const Workshop = ({ data }) => {
+const VideoWorkshop = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <WorkshopTemplate
+      <VideoWorkshopTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        gallery={post.frontmatter.gallery}
+        featuredimage={post.frontmatter.featuredimage}
+        upcoming={post.frontmatter.upcoming}
+        previous={post.frontmatter.previous}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -79,13 +107,13 @@ const Workshop = ({ data }) => {
   );
 };
 
-Workshop.propTypes = {
+VideoWorkshop.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   })
 };
 
-export default Workshop;
+export default VideoWorkshop;
 
 export const pageQuery = graphql`
   query VideoWorkshopByID($id: String!) {
@@ -95,8 +123,13 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
-        tags
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 920, quality: 70) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

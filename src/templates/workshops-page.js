@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
-import WorkshopList from '../components/WorkshopList';
-import ImageAndInfo from '../components/ImageAndInfo/ImageAndInfo';
-import Testimonials from '../components/Testimonials';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import HeaderTitle from "../components/HeaderTitle";
+import WorkshopList from "../components/WorkshopList";
+import ImageAndInfo from "../components/ImageAndInfo/ImageAndInfo";
+import Testimonials from "../components/Testimonials";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const WorkshopsPageTemplate = ({
   image,
@@ -18,27 +19,8 @@ export const WorkshopsPageTemplate = ({
   fullImage,
   pricing
 }) => (
-  <div className="content">
-    <div
-      className="full-width-image-container margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    >
-      <h2
-        className="has-text-weight-bold is-size-1"
-        style={{
-          boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-          backgroundColor: '#f40',
-          color: 'white',
-          padding: '1rem'
-        }}
-      >
-        {title}
-      </h2>
-    </div>
+  <div className="">
+    <HeaderTitle title="Live Workshops" subTitle="" />
     <section className="section section--gradient">
       <div className="container">
         <div className="section">

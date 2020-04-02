@@ -1,9 +1,6 @@
 import React from "react";
 
-function HeaderTitle({
-  title = "{Code} Workshop",
-  subtitle = "Adventure driven development."
-}) {
+function HeaderTitle({ title = "", subtitle = "" }) {
   return (
     <div className="codeBanner">
       <div className="container">
