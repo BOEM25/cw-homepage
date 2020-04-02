@@ -1,6 +1,5 @@
 ---
-templateKey: recipient
-path: /recipients
-title: Stephen Castle
-image: /img/values-stuffed-animals.jpeg
+templateKey: contributor
+name: Stephen Castle
+image: /img/contributors/stephen.jpg
 ---

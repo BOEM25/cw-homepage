@@ -11,64 +11,14 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 export const VideoWorkshopTemplate = ({
   content,
   contentComponent,
-  upcoming,
-  previous,
   tags,
-  gallery,
   title,
   featuredimage,
   helmet
 }) => {
   const PostContent = contentComponent || Content;
 
-  return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-8">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <PreviewCompatibleImage imageInfo={featuredimage} />
-
-            <PostContent content={content} />
-            <div className="tile is-ancestor">
-              <div className="tile is-vertical">
-                {(gallery || []).map((item, i) => (
-                  <div className="tile is-parent is-vertical">
-                    <article className="tile is-child">
-                      <PreviewCompatibleImage imageInfo={item.image} />
-                    </article>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-          <div className="column is-4">
-            <EventWidget
-              events={upcoming}
-              title="Upcoming Events"
-              showBookButton
-            />
-            <EventWidget events={previous} title="Previous Events" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <section className="section">{helmet || ""}</section>;
 };
 
 VideoWorkshopTemplate.propTypes = {
@@ -87,10 +37,7 @@ const VideoWorkshop = ({ data }) => {
       <VideoWorkshopTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        gallery={post.frontmatter.gallery}
         featuredimage={post.frontmatter.featuredimage}
-        upcoming={post.frontmatter.upcoming}
-        previous={post.frontmatter.previous}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>

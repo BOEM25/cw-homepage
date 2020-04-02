@@ -1,6 +1,6 @@
 ---
 templateKey: video-workshop
-title: Understanding Tree Traversals
+title: Using Firebase With React Hooks
 date: 2019-07-15T21:02:20.866Z
 featuredpost: false
 published: true

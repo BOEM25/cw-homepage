@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import ContributorList from "../components/ContributorList";
 
 export const ContributorsPageTemplate = ({
   title,
@@ -16,21 +17,7 @@ export const ContributorsPageTemplate = ({
 
     <section className="section section--gradient">
       <div className="container">
-        <div className="columns is-multiline">
-          {contributors.map(contributor => (
-            <div className="column is-3">
-              <figure className="image">
-                <PreviewCompatibleImage
-                  isRounded
-                  imageInfo={{
-                    image: contributor.image,
-                    alt: `image of contributor ${contributor.name}`
-                  }}
-                />
-              </figure>
-            </div>
-          ))}
-        </div>
+        <ContributorList />
       </div>
     </section>
   </div>
@@ -78,16 +65,6 @@ export const ContributorsPageQuery = graphql`
       frontmatter {
         title
         subtitle
-        contributors {
-          name
-          image {
-            childImageSharp {
-              fluid(maxWidth: 300, quality: 80) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
         image {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 80) {

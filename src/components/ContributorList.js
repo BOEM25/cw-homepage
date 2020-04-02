@@ -6,54 +6,24 @@ import PreviewCompatibleImage from "./PreviewCompatibleImage";
 class ContributorList extends React.Component {
   render() {
     const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { edges: contributors } = data.allMarkdownRemark;
 
     return (
       <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`card ${
-                  post.frontmatter.featuredpost ? "is-featured" : ""
-                }`}
-              >
-                {post.frontmatter.featuredimage ? (
-                  <div className="card-image">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.title}`
-                      }}
-                    />
-                  </div>
-                ) : null}
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-left">
-                      <figure className="image is-48x48">
-                        <img
-                          src="https://bulma.io/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div className="media-content">
-                      <p className="title is-4">{post.frontmatter.title}</p>
-                      <p className="subtitle is-6">@{post.frontmatter.date}</p>
-                    </div>
-                  </div>
-
-                  <div className="content">
-                    <p>{post.excerpt}</p>
-                  </div>
-                </div>
-                <footer className="card-footer">
-                  <Link className="card-footer-item" to={post.fields.slug}>
-                    Scheduled Times and Syllabus →
-                  </Link>
-                </footer>
-              </article>
+        {contributors &&
+          contributors.map(({ node: contributor }) => (
+            <div className="column is-3">
+              <Link className="" to={contributor.fields.slug}>
+                <figure className="image">
+                  <PreviewCompatibleImage
+                    isRounded
+                    imageInfo={{
+                      image: contributor.frontmatter.image,
+                      alt: `image of contributor ${contributor.frontmatter.name}`
+                    }}
+                  />
+                </figure>
+              </Link>
             </div>
           ))}
       </div>
@@ -85,13 +55,11 @@ export default () => (
                 slug
               }
               frontmatter {
-                title
+                name
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                featuredimage {
+                image {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 320, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
