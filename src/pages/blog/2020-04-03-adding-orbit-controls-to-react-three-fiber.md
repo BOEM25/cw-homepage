@@ -186,7 +186,7 @@ export default function App() {
   return (
     <>
       <Canvas style={{ background: "white" }}>
-        <CameraControls />
+        <CameraControls /> // highlight-line
         <directionalLight intensity={0.5} />
         <Suspense fallback={<Loading />}>
           <ArWing />
@@ -205,40 +205,42 @@ export default function App() {
 }
 ```
 
-### Using the useThree Hook to get a reference to the Three.JS Camera and Canvas Element
+Let's break down what we just did in that last step. There are three important parts.
 
-To add OrbitControls we need a reference to the Three.js camera and canvas element when creating the component.
-To get these react-three-fiber provides the `useThree` hook, this is an escape hatch into getting access to core Three.js elements.
+> ### Using the useThree Hook to get a reference to the Three.JS Camera and Canvas Element
+>
+> To add OrbitControls we need a reference to the Three.js camera and canvas element when creating the component.
+> To get these react-three-fiber provides the `useThree` hook, this is an escape hatch into getting access to core Three.js elements.
+>
+> ```js
+> const {
+>   camera,
+>   gl: { domElement },
+> } = useThree();
+> ```
 
-```js
-const {
-  camera,
-  gl: { domElement },
-} = useThree();
-```
+> ### Initializing the Orbit Controls
+>
+> Once we have those, we can create the OrbitControls using orbitControls JSX element, which has been made available to us from earlier when we called `extend()`.
+> You could try removing the line with extend and check the error to see what would have happened if we hadn't done that first.
+> Something worth noticing here is that the args array provided to the JSX elements in react-three-fiber are always the parameters required to initialize a native object in Three.JS. [OrbitControls](https://threejs.org/docs/#examples/en/> controls/OrbitControls)
+>
+> Getting used to the mapping between Three.js docs and their equivalent component API happens over time as you work with it.
+>
+> ```js
+> <orbitControls args={[camera, domElement]} />
+> ```
 
-### Initializing the Orbit Controls
-
-Once we have those, we can create the OrbitControls using orbitControls JSX element, which has been made available to us from earlier when we called `extend()`.
-You could try removing the line with extend and check the error to see what would have happened if we hadn't done that first.
-Something worth noticing here is that the args array provided to the JSX elements in react-three-fiber are always the parameters required to initialize a native object in Three.JS. [OrbitControls](https://threejs.org/docs/#examples/en/controls/OrbitControls)
-
-Getting used to the mapping between Three.js docs and their equivalent component API happens over time as you work with it.
-
-```js
-<orbitControls args={[camera, domElement]} />
-```
-
-### Plugging The Orbit Controls into the render loop with useFrame
-
-In order for our orbit controls to be updated on every animation frame, we need to call `controls.current.update()` in the render loop. Any time you need some code to run in the render loop in react-three-fiber we use the useFrame hook. In this case, since we want to call a method on OrbitControls, we also need to add a ref, and then we can call the update method.
-
-```js
-// Ref to the controls, so that we can update them on every frame using useFrame
-const controls = useRef();
-
-useFrame((state) => controls.current.update());
-```
+> ### Plugging The Orbit Controls into the render loop with useFrame
+>
+> In order for our orbit controls to be updated on every animation frame, we need to call `controls.current.update()` in the render loop. Any time you need some code to run in the render loop in react-three-fiber we use the useFrame hook. > In this case, since we want to call a method on OrbitControls, we also need to add a ref, and then we can call the update method.
+>
+> ```js
+> // Ref to the controls, so that we can update them on every frame using useFrame
+> const controls = useRef();
+>
+> useFrame((state) => controls.current.update());
+> ```
 
 ## Configuring OrbitControls
 
@@ -345,4 +347,4 @@ export default function App() {
 
 ## Coming Up in Part Three
 
-In Part Three we will start to get to something that feels like a game finally. We will add movement controls to our ship, and create some procedurally generated terrain to fly through.
+In Part Three we will start building something that really feels like a game. We will add movement controls to our ship, and create some procedurally generated terrain to fly through.
