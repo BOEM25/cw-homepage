@@ -50,7 +50,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import "./styles.css";
 
 // highlight-start
-// Extend will create a react component wrapper of OrbitControls for us to use.
+// Extend will make OrbitControls available as a JSX element called orbitControls for us to use.
 extend({ OrbitControls });
 // highlight-end
 
@@ -260,7 +260,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import "./styles.css";
 
-// Extend will create a react component wrapper of OrbitControls for us to use.
+// Extend will make OrbitControls available as a JSX element called orbitControls for us to use.
 extend({ OrbitControls });
 
 function Loading() {
