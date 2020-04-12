@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 import EmailForm from "../components/EmailForm";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
-import WorkshopList from "../components/WorkshopList";
+import FeaturedWorkshopList from "../components/FeaturedWorkshopList";
 import BlogRoll from "../components/BlogRollHomePage";
 
 export const IndexPageTemplate = ({ image, title, subtitle }) => (
@@ -17,7 +17,7 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <WorkshopList />
+                <FeaturedWorkshopList />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/workshops">
@@ -55,7 +55,7 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
@@ -94,9 +94,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;

@@ -17,26 +17,26 @@ const experienceMap = {
   0: {
     icon: easy,
     message:
-      "This workshop can be completed with little to no programming experience."
+      "This workshop can be completed with little to no programming experience.",
   },
   1: {
     icon: medium,
-    message: "This course requires moderate programming experience."
+    message: "This course requires moderate programming experience.",
   },
   2: {
     icon: hard,
     message:
-      "This course is for professional programmers with some years of experience."
-  }
+      "This course is for professional programmers with some years of experience.",
+  },
 };
 
 const languageMap = {
   "c++": cpp,
   go: go,
-  javascript: js
+  javascript: js,
 };
 
-class WorkshopList extends React.Component {
+class FeaturedWorkshopList extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
@@ -70,7 +70,7 @@ class WorkshopList extends React.Component {
                           }
                         />
                         <ReactTooltip multiline />
-                        {(post.frontmatter.languages || []).map(language => (
+                        {(post.frontmatter.languages || []).map((language) => (
                           <img
                             src={languageMap[language]}
                             key={language}
@@ -82,7 +82,7 @@ class WorkshopList extends React.Component {
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.title}`
+                          alt: `featured image thumbnail for post ${post.title}`,
                         }}
                       />
                     </div>
@@ -96,7 +96,7 @@ class WorkshopList extends React.Component {
                           isRounded
                           imageInfo={{
                             image: post.frontmatter.authorimage,
-                            alt: `author thumbnail for event ${post.title}`
+                            alt: `author thumbnail for event ${post.title}`,
                           }}
                         />
                       </figure>
@@ -113,7 +113,7 @@ class WorkshopList extends React.Component {
                     <p>{post.frontmatter.description}</p>
                   </div>
                   <div className="tags">
-                    {post.frontmatter.tags.map(tag => (
+                    {post.frontmatter.tags.map((tag) => (
                       <span className="tag is-danger" key={tag}>
                         {tag}
                       </span>
@@ -133,18 +133,18 @@ class WorkshopList extends React.Component {
   }
 }
 
-WorkshopList.propTypes = {
+FeaturedWorkshopList.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
+      edges: PropTypes.array,
+    }),
+  }),
 };
 
 export default () => (
   <StaticQuery
     query={graphql`
-      query WorkshopListQuery {
+      query FeaturedWorkshopListQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "workshop" } } }
@@ -185,6 +185,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <WorkshopList data={data} count={count} />}
+    render={(data, count) => <FeaturedWorkshopList data={data} count={count} />}
   />
 );

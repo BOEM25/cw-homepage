@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
-import WorkshopList from "../components/WorkshopList";
+import FeaturedWorkshopList from "../components/FeaturedWorkshopList";
 import ImageAndInfo from "../components/ImageAndInfo/ImageAndInfo";
 import Testimonials from "../components/Testimonials";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -17,7 +17,7 @@ export const WorkshopsPageTemplate = ({
   main,
   testimonials,
   fullImage,
-  pricing
+  pricing,
 }) => (
   <div className="">
     <HeaderTitle title="Live Workshops" subTitle="" />
@@ -32,7 +32,7 @@ export const WorkshopsPageTemplate = ({
           </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <WorkshopList gridItems={intro.blurbs} />
+              <FeaturedWorkshopList gridItems={intro.blurbs} />
               <ImageAndInfo
                 title={main.heading}
                 body={main.description}
@@ -67,7 +67,7 @@ export const WorkshopsPageTemplate = ({
                     fullImage.childImageSharp
                       ? fullImage.childImageSharp.fluid.src
                       : fullImage
-                  })`
+                  })`,
                 }}
               />
               <h2 className="has-text-weight-semibold is-size-2">
@@ -91,17 +91,17 @@ WorkshopsPageTemplate.propTypes = {
   heading: PropTypes.string,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
+    blurbs: PropTypes.array,
   }),
   main: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
     image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   testimonials: PropTypes.array,
-  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 const WorkshopsPage = ({ data }) => {
@@ -127,9 +127,9 @@ const WorkshopsPage = ({ data }) => {
 WorkshopsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default WorkshopsPage;

@@ -26,48 +26,16 @@ class VideoRoll extends React.Component {
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.title}`
+                          alt: `featured image thumbnail for post ${post.title}`,
                         }}
                       />
                     </div>
                   </Link>
                 ) : null}
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-left">
-                      <figure className="image is-48x48">
-                        <PreviewCompatibleImage
-                          isRounded
-                          imageInfo={{
-                            image: post.frontmatter.authorimage,
-                            alt: `image of author for post ${post.title}`
-                          }}
-                        />
-                      </figure>
-                    </div>
-
-                    <div className="media-content">
-                      <Link className="" to={post.fields.slug}>
-                        <h3 className="title is-4">{post.frontmatter.title}</h3>
-                      </Link>
-                      <p className="subtitle is-6">{post.frontmatter.date}</p>
-                    </div>
-                  </div>
-
-                  <div className="content">
-                    <p>{post.frontmatter.description}</p>
-                  </div>
-                  <div className="tags">
-                    {post.frontmatter.tags.map(tag => (
-                      <span className="tag is-danger" key={tag}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <div className="card-content"></div>
                 <footer className="card-footer">
                   <Link className="card-footer-item" to={post.fields.slug}>
-                    Read More →
+                    Start Video →
                   </Link>
                 </footer>
               </article>
@@ -81,9 +49,9 @@ class VideoRoll extends React.Component {
 VideoRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
+      edges: PropTypes.array,
+    }),
+  }),
 };
 
 export default () => (
