@@ -19,7 +19,7 @@ export const WorkshopsPageTemplate = ({
   main,
   testimonials,
   fullImage,
-  pricing
+  pricing,
 }) => (
   <div className="">
     <HeaderTitle title={title} subTitle={subtitle} />
@@ -31,8 +31,8 @@ export const WorkshopsPageTemplate = ({
           </div>
           <div className="message-body">
             All live workshops are currently on hold until further notice due to
-            the developing COVID-19 situation. Please if you can join us on
-            Discord or our remote meetups which we will continue to post on
+            the developing COVID-19 situation. Please join us on Discord or find
+            one of our remote meetups which we will continue to post on
             Meetup.com. Be safe and take care of yourselves.
             <div className="buttons are-medium" style={{ marginTop: "1rem" }}>
               <a
@@ -59,7 +59,7 @@ export const WorkshopsPageTemplate = ({
                     fullImage.childImageSharp
                       ? fullImage.childImageSharp.fluid.src
                       : fullImage
-                  })`
+                  })`,
                 }}
               />
               <ImageAndInfo
@@ -104,17 +104,17 @@ WorkshopsPageTemplate.propTypes = {
   heading: PropTypes.string,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
+    blurbs: PropTypes.array,
   }),
   main: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
     image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   testimonials: PropTypes.array,
-  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 const WorkshopsPage = ({ data }) => {
@@ -140,9 +140,9 @@ const WorkshopsPage = ({ data }) => {
 WorkshopsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default WorkshopsPage;

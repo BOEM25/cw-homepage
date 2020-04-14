@@ -19,8 +19,8 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
           </div>
           <div className="message-body">
             All live workshops are currently on hold until further notice due to
-            the developing COVID-19 situation. Please if you can join us on
-            Discord or our remote meetups which we will continue to post on
+            the developing COVID-19 situation. Please join us on Discord or find
+            one of our remote meetups which we will continue to post on
             Meetup.com. Be safe and take care of yourselves.
             <div className="buttons are-medium" style={{ marginTop: "1rem" }}>
               <a
@@ -76,7 +76,7 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
@@ -115,9 +115,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;
