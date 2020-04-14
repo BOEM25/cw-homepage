@@ -74,38 +74,43 @@ const Footer = class extends React.Component {
                 </section>
               </div>
               <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com/workshopcode">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com/workshopcode">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com/codeworkshop">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a
-                  title="youtube"
-                  href="https://www.youtube.com/channel/UC27DIahQvIOJHnQwpJmH0LA"
-                >
-                  <img
-                    src={vimeo}
-                    alt="Youtube"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
+                <div>
+                  <a title="facebook" href="https://facebook.com/workshopcode">
+                    <img
+                      src={facebook}
+                      alt="Facebook"
+                      style={{ width: "1em", height: "1em" }}
+                    />
+                  </a>
+                  <a title="twitter" href="https://twitter.com/workshopcode">
+                    <img
+                      className="fas fa-lg"
+                      src={twitter}
+                      alt="Twitter"
+                      style={{ width: "1em", height: "1em" }}
+                    />
+                  </a>
+                  <a
+                    title="instagram"
+                    href="https://instagram.com/codeworkshop"
+                  >
+                    <img
+                      src={instagram}
+                      alt="Instagram"
+                      style={{ width: "1em", height: "1em" }}
+                    />
+                  </a>
+                  <a
+                    title="youtube"
+                    href="https://www.youtube.com/channel/UC27DIahQvIOJHnQwpJmH0LA"
+                  >
+                    <img
+                      src={vimeo}
+                      alt="Youtube"
+                      style={{ width: "1em", height: "1em" }}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
