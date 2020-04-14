@@ -1,7 +1,7 @@
 import React from "react";
 import { navigate } from "gatsby-link";
 import Layout from "../../components/Layout";
-
+import HeaderTitle from "../../components/HeaderTitle";
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -36,6 +36,8 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
+        <HeaderTitle title={"Contact Us"} />
+
         <section className="section">
           <div className="container article-container">
             <div className="content">

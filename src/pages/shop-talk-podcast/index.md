@@ -1,5 +1,5 @@
 ---
-templateKey: 'podcasts-page'
+templateKey: "podcasts-page"
 path: /shop-talk-podcast
 title: Shop Talk PodCast
 image: /img/podcast-toys.jpeg

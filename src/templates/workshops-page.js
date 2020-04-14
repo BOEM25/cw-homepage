@@ -1,15 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
-import WorkshopList from '../components/WorkshopList';
-import ImageAndInfo from '../components/ImageAndInfo/ImageAndInfo';
-import Testimonials from '../components/Testimonials';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import HeaderTitle from "../components/HeaderTitle";
+import FeaturedWorkshopList from "../components/FeaturedWorkshopList";
+import ImageAndInfo from "../components/ImageAndInfo/ImageAndInfo";
+import Testimonials from "../components/Testimonials";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const WorkshopsPageTemplate = ({
   image,
   title,
+  subtitle,
   heading,
   description,
   intro,
@@ -18,39 +20,47 @@ export const WorkshopsPageTemplate = ({
   fullImage,
   pricing
 }) => (
-  <div className="content">
-    <div
-      className="full-width-image-container margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    >
-      <h2
-        className="has-text-weight-bold is-size-1"
-        style={{
-          boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-          backgroundColor: '#f40',
-          color: 'white',
-          padding: '1rem'
-        }}
-      >
-        {title}
-      </h2>
-    </div>
+  <div className="">
+    <HeaderTitle title={title} subTitle={subtitle} />
     <section className="section section--gradient">
       <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-7 is-offset-1">
-              <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-              <p>{description}</p>
+        <article className="message is-primary">
+          <div className="message-header">
+            <p>Important Message</p>
+          </div>
+          <div className="message-body">
+            All live workshops are currently on hold until further notice due to
+            the developing COVID-19 situation. Please if you can join us on
+            Discord or our remote meetups which we will continue to post on
+            Meetup.com. Be safe and take care of yourselves.
+            <div className="buttons are-medium" style={{ marginTop: "1rem" }}>
+              <a
+                className="button is-primary"
+                href="https://www.meetup.com/code-workshop/"
+              >
+                Meetup.com
+              </a>
+              <a className="button is-link" href="https://discord.gg/5E63d7u">
+                Discord
+              </a>
             </div>
           </div>
+        </article>
+        <div className="section">
+          <h2 className="title big">FEATURED WORKSHOPS</h2>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <WorkshopList gridItems={intro.blurbs} />
+              <FeaturedWorkshopList gridItems={intro.blurbs} />
+              <div
+                className="full-width-image-container"
+                style={{
+                  backgroundImage: `url(${
+                    fullImage.childImageSharp
+                      ? fullImage.childImageSharp.fluid.src
+                      : fullImage
+                  })`
+                }}
+              />
               <ImageAndInfo
                 title={main.heading}
                 body={main.description}
@@ -78,23 +88,6 @@ export const WorkshopsPageTemplate = ({
                 </div>
               </div>
               <Testimonials testimonials={testimonials} />
-              <div
-                className="full-width-image-container"
-                style={{
-                  backgroundImage: `url(${
-                    fullImage.childImageSharp
-                      ? fullImage.childImageSharp.fluid.src
-                      : fullImage
-                  })`
-                }}
-              />
-              <h2 className="has-text-weight-semibold is-size-2">
-                {pricing.heading}
-              </h2>
-              <p className="is-size-5">{pricing.description}</p>
-              <Link to="/contact">
-                <button className="button">Contact Us</button>
-              </Link>
             </div>
           </div>
         </div>
