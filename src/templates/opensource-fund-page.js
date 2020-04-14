@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
+import EmailForm from "../components/EmailForm";
 
 export const OpenSourceFundPageTemplate = ({
   title,
@@ -29,6 +30,7 @@ export const OpenSourceFundPageTemplate = ({
         </div>
       </div>
     </section>
+    <EmailForm />
   </div>
 );
 

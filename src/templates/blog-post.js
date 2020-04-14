@@ -64,9 +64,7 @@ export const BlogPostTemplate = ({
           </div>
         </div>
       </section>
-      <div className="margin-top-0 email-banner">
-        <EmailForm />
-      </div>
+      <EmailForm />
     </>
   );
 };

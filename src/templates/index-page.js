@@ -55,9 +55,7 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
       </div>
     </section>
     <section>
-      <div className="margin-top-0 email-banner">
-        <EmailForm />
-      </div>
+      <EmailForm />
     </section>
     <section className="section section--gradient">
       <div className="container">

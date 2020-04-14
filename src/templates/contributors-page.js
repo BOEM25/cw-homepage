@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
 import ContributorList from "../components/ContributorList";
+import EmailForm from "../components/EmailForm";
 
 export const ContributorsPageTemplate = ({
   title,
@@ -19,6 +20,7 @@ export const ContributorsPageTemplate = ({
         <ContributorList />
       </div>
     </section>
+    <EmailForm />
   </div>
 );
 

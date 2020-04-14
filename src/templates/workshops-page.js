@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
 import FeaturedWorkshopList from "../components/FeaturedWorkshopList";
+import EmailForm from "../components/EmailForm";
 import ImageAndInfo from "../components/ImageAndInfo/ImageAndInfo";
 import Testimonials from "../components/Testimonials";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -93,6 +94,7 @@ export const WorkshopsPageTemplate = ({
         </div>
       </div>
     </section>
+    <EmailForm />
   </div>
 );
 

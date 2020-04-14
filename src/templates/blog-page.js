@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import BlogRoll from "../components/BlogRoll";
 import HeaderTitle from "../components/HeaderTitle";
+import EmailForm from "../components/EmailForm";
 
 export const BlogPageTemplate = ({
   image,
@@ -25,6 +26,7 @@ export const BlogPageTemplate = ({
         </div>
       </div>
     </section>
+    <EmailForm />
   </div>
 );
 
