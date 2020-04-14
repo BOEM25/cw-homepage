@@ -3,7 +3,7 @@ import React from "react";
 function HeaderTitle({
   title = "",
   subtitle = "",
-  backgroundColor = "black",
+  backgroundColor = "#0e0e0e",
   titleColor = "white",
   subtitleColor = "white"
 }) {

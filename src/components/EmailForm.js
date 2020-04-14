@@ -36,7 +36,7 @@ function EmailForm() {
         )}
         {!completed.status && (
           <>
-            <label for="email-signup">Sign up For the Mailing List</label>
+            <label htmlFor="email-signup">Sign up For the Mailing List</label>
             <div className="form-container">
               <input
                 type="text"
