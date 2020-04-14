@@ -33,7 +33,7 @@ Learn the GO programming language by building a simple web application. Go is a 
 
 ## Experience Level
 
-Intended for students with some coding experience, but new to ReactJS Web framework.
+Intended for students with some coding experience, but new to GO
 
 ## Programming Languages used in the course.
 
@@ -41,7 +41,7 @@ Intended for students with some coding experience, but new to ReactJS Web framew
 
 ## Prerequisites
 
-The things you will need to participate in the course, if you have trouble with any of them don't worry we can help you get set up at the workshop.
+The things you will need to do to participate in the course, if you have trouble with any of them don't worry we can help you get set up at the workshop.
 
 - A laptop (Windows, macOS, or Linux).
 - [Install GO](https://golang.org/doc/install)
