@@ -12,10 +12,22 @@ export const WorkshopsPageTemplate = ({ title, image, subtitle }) => (
 
     <section className="section section--gradient">
       <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <VideoRoll />
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              Videos Coming Soon
+            </h1>
+            <p>
+              We are working on recording our first video tutorials and
+              workshops. Subscribe below for an update when the first one is
+              published.
+            </p>
+            <div className="section">
+              <div className="columns">
+                <div className="column is-10 is-offset-1">
+                  <VideoRoll />
+                </div>
+              </div>
             </div>
           </div>
         </div>

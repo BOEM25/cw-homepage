@@ -1,5 +1,5 @@
 ---
-templateKey: 'workshops-page'
+templateKey: "workshops-page"
 path: /workshops
 title: Live Workshops
 image: /img/classroom-robots.jpeg
@@ -29,11 +29,11 @@ main:
     alt: Tasty food and snacks.
     image: /img/event-photos/iot-front.jpg
 testimonials:
-  - author: Elisabeth Kaurismäki
+  - author: Cameron Tatz
     quote: >-
       Code Workshop was awesome. I learned a ton and made a lot of new friends
       with similar interests and goals.
-  - author: Philipp Trommler
+  - author: Richard Hertzog
     quote: >-
       This is my favorite meetup in vegas. The events are always awesome and 
       they have great food and awesome surprises every time.

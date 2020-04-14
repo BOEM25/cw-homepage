@@ -1,5 +1,5 @@
 ---
 templateKey: contributor
-name: Richard Hertzog
+name: Austin Lambert
 image: /img/contributors/placeholder.jpg
 ---

@@ -13,10 +13,33 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
     <HeaderTitle title={title} subtitle={subtitle} image={image} />
     <section className="section section--gradient">
       <div className="container">
+        <article className="message is-primary">
+          <div className="message-header">
+            <p>Important Message</p>
+          </div>
+          <div className="message-body">
+            All live workshops are currently on hold until further notice due to
+            the developing COVID-19 situation. Please if you can join us on
+            Discord or our remote meetups which we will continue to post on
+            Meetup.com. Be safe and take care of yourselves.
+            <div className="buttons are-medium" style={{ marginTop: "1rem" }}>
+              <a
+                className="button is-primary"
+                href="https://www.meetup.com/code-workshop/"
+              >
+                Meetup.com
+              </a>
+              <a className="button is-link" href="https://discord.gg/5E63d7u">
+                Discord
+              </a>
+            </div>
+          </div>
+        </article>
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
+              <div className="">
+                <h2 className="header big">FEATURED WORKSHOPS</h2>
                 <FeaturedWorkshopList />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
@@ -32,14 +55,14 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
       </div>
     </section>
     <section>
-      <div className="margin-top-0 email-banner slanted">
+      <div className="margin-top-0 email-banner">
         <EmailForm />
       </div>
     </section>
     <section className="section section--gradient">
       <div className="container">
         <div className="column is-12">
-          <h3 className="has-text-weight-semibold is-size-2">Latest content</h3>
+          <h2 className="header big">Latest content</h2>
           <BlogRoll />
           <div className="column is-12 has-text-centered">
             <Link className="btn" to="/blog">
@@ -55,7 +78,7 @@ export const IndexPageTemplate = ({ image, title, subtitle }) => (
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.string
 };
 
 const IndexPage = ({ data }) => {
@@ -94,9 +117,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default IndexPage;

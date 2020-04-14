@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import HeaderTitle from "../components/HeaderTitle";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import ContributorList from "../components/ContributorList";
 
 export const ContributorsPageTemplate = ({

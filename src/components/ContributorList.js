@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import { ContributorsPageQuery } from "../templates/contributors-page";
 
 class ContributorList extends React.Component {
   render() {
@@ -12,18 +13,17 @@ class ContributorList extends React.Component {
       <div className="columns is-multiline">
         {contributors &&
           contributors.map(({ node: contributor }) => (
-            <div className="column is-3">
-              <Link className="" to={contributor.fields.slug}>
-                <figure className="image">
-                  <PreviewCompatibleImage
-                    isRounded
-                    imageInfo={{
-                      image: contributor.frontmatter.image,
-                      alt: `image of contributor ${contributor.frontmatter.name}`
-                    }}
-                  />
-                </figure>
-              </Link>
+            <div className="column is-3 contributor">
+              <figure className="image">
+                <PreviewCompatibleImage
+                  isRounded
+                  imageInfo={{
+                    image: contributor.frontmatter.image,
+                    alt: `image of contributor ${contributor.frontmatter.name}`
+                  }}
+                />
+              </figure>
+              <span>{contributor.frontmatter.name}</span>
             </div>
           ))}
       </div>

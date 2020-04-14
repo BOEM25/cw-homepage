@@ -1,5 +1,5 @@
 ---
 templateKey: contributor
-name: Robert Thompson
+name: Cameron Tatz
 image: /img/contributors/placeholder.jpg
 ---
