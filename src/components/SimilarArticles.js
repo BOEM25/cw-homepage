@@ -25,7 +25,7 @@ class SimilarArticles extends React.Component {
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.title}`,
+                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         }}
                       />
                     </div>
@@ -39,7 +39,7 @@ class SimilarArticles extends React.Component {
                           isRounded
                           imageInfo={{
                             image: post.frontmatter.authorimage,
-                            alt: `image of author for post ${post.title}`,
+                            alt: `image of author for post ${post.frontmatter.title}`,
                           }}
                         />
                       </figure>

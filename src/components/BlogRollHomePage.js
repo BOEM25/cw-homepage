@@ -26,7 +26,7 @@ class BlogRollHomepage extends React.Component {
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.title}`
+                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         }}
                       />
                     </div>
@@ -40,7 +40,7 @@ class BlogRollHomepage extends React.Component {
                           isRounded
                           imageInfo={{
                             image: post.frontmatter.authorimage,
-                            alt: `image of author for post ${post.title}`
+                            alt: `image of author for post ${post.frontmatter.title}`,
                           }}
                         />
                       </figure>
@@ -58,7 +58,7 @@ class BlogRollHomepage extends React.Component {
                     <p>{post.frontmatter.description}</p>
                   </div>
                   <div className="tags">
-                    {post.frontmatter.tags.map(tag => (
+                    {post.frontmatter.tags.map((tag) => (
                       <span className="tag is-danger" key={tag}>
                         <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                       </span>
@@ -81,9 +81,9 @@ class BlogRollHomepage extends React.Component {
 BlogRollHomepage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
+      edges: PropTypes.array,
+    }),
+  }),
 };
 
 export default () => (
