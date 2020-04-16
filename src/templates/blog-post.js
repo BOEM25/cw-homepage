@@ -7,6 +7,7 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import AuthorCard from "../components/AuthorCard";
 import EmailForm from "../components/EmailForm";
+import SimilarArticles from "../components/SimilarArticles";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 require("prismjs/themes/prism-tomorrow.css");
@@ -20,7 +21,7 @@ export const BlogPostTemplate = ({
   author,
   authorImage,
   title,
-  helmet
+  helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -43,7 +44,7 @@ export const BlogPostTemplate = ({
                 <PreviewCompatibleImage
                   imageInfo={{
                     image: featuredImage,
-                    alt: `featured image thumbnail for post ${title}`
+                    alt: `featured image thumbnail for post ${title}`,
                   }}
                 />
               </section>
@@ -52,7 +53,7 @@ export const BlogPostTemplate = ({
                 <div style={{ marginTop: `4rem` }} className="content">
                   <h4>Tags</h4>
                   <ul className="taglist">
-                    {tags.map(tag => (
+                    {tags.map((tag) => (
                       <li key={tag + `tag`}>
                         <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                       </li>
@@ -64,6 +65,10 @@ export const BlogPostTemplate = ({
           </div>
         </div>
       </section>
+      <section className="container section">
+        <h3 className="title is-size-3">Similar Articles</h3>
+        <SimilarArticles tags={tags} thisArticle={title} />
+      </section>
       <EmailForm />
     </>
   );
@@ -74,7 +79,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object
+  helmet: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -151,8 +156,8 @@ const BlogPost = ({ data }) => {
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object
-  })
+    markdownRemark: PropTypes.object,
+  }),
 };
 
 export default BlogPost;
