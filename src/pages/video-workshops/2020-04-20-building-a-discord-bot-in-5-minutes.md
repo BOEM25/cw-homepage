@@ -25,4 +25,4 @@ Discord Bot Starter Kit is a simple NodeJS project to get you up and running wit
 
 Note: You should install NodeJS before trying to follow along with this, it isn't covered in the video, but you can download and install it here. https://nodejs.org/en/download/
 
-(Discord Bot Starter Kit)[https://github.com/codeworkshop-dev/discord-bot-starter-kit]
+[Discord Bot Starter Kit](https://github.com/codeworkshop-dev/discord-bot-starter-kit)
