@@ -15,20 +15,10 @@ export const WorkshopsPageTemplate = ({ title, image, subtitle }) => (
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                Videos Coming Soon
-              </h1>
-              <p>
-                We are working on recording our first video tutorials and
-                workshops. Subscribe below for an update when the first one is
-                published.
-              </p>
-              <div className="section">
-                <div className="columns">
-                  <div className="column is-10 is-offset-1">
-                    <VideoRoll />
-                  </div>
+            <div className="section">
+              <div className="columns">
+                <div className="column is-12">
+                  <VideoRoll />
                 </div>
               </div>
             </div>
@@ -43,7 +33,7 @@ export const WorkshopsPageTemplate = ({ title, image, subtitle }) => (
 WorkshopsPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  subtitle: PropTypes.string
+  subtitle: PropTypes.string,
 };
 
 const WorkshopsPage = ({ data }) => {
@@ -63,9 +53,9 @@ const WorkshopsPage = ({ data }) => {
 WorkshopsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default WorkshopsPage;

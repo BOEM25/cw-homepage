@@ -32,7 +32,18 @@ class VideoRoll extends React.Component {
                     </div>
                   </Link>
                 ) : null}
-                <div className="card-content"></div>
+                <div className="card-content">
+                  <div className="media-content">
+                    <Link className="" to={post.fields.slug}>
+                      <h3 className="title is-4">{post.frontmatter.title}</h3>
+                    </Link>
+                    <p className="subtitle is-6">{post.frontmatter.date}</p>
+                  </div>
+
+                  <div className="content">
+                    <p>{post.frontmatter.description}</p>
+                  </div>
+                </div>
                 <footer className="card-footer">
                   <Link className="card-footer-item" to={post.fields.slug}>
                     Start Video →

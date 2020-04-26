@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
+import YouTube from "react-youtube";
 import Layout from "../components/Layout";
 import EventWidget from "../components/EventWidget";
 import Content, { HTMLContent } from "../components/Content";
@@ -14,11 +15,38 @@ export const VideoWorkshopTemplate = ({
   tags,
   title,
   featuredimage,
-  helmet
+  video,
+  helmet,
 }) => {
   const PostContent = contentComponent || Content;
 
-  return <section className="section">{helmet || ""}</section>;
+  return (
+    <section className="section">
+      <div className="container article-container">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              {title}
+            </h1>
+            {helmet || ""} <YouTube videoId={video} className="videoPost" />
+            <PostContent content={content} className="content" />
+            {tags && tags.length ? (
+              <div style={{ marginTop: `4rem` }} className="content">
+                <h4>Tags</h4>
+                <ul className="taglist">
+                  {tags.map((tag) => (
+                    <li key={tag + `tag`}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 VideoWorkshopTemplate.propTypes = {
@@ -26,7 +54,7 @@ VideoWorkshopTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object
+  helmet: PropTypes.object,
 };
 
 const VideoWorkshop = ({ data }) => {
@@ -48,6 +76,7 @@ const VideoWorkshop = ({ data }) => {
           </Helmet>
         }
         tags={post.frontmatter.tags}
+        video={post.frontmatter.video}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -56,8 +85,8 @@ const VideoWorkshop = ({ data }) => {
 
 VideoWorkshop.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object
-  })
+    markdownRemark: PropTypes.object,
+  }),
 };
 
 export default VideoWorkshop;
@@ -70,6 +99,8 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        tags
+        video
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 920, quality: 70) {
