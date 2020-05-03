@@ -18,7 +18,7 @@ tags:
   - tutorials
 ---
 
-The useEffect hook is one of the most essential hooks you will need to use when working on a modern react app. It allows you to execute code that responds to changes in the state and props of a component and execute necessary actions like fetching data or calling browser APIs. Previously a lot of the code we now want to put in to React lifecycle methods in class components goes into a useEffect hook. However, useEffect does not precisely follow the same rules as conventional life cycle methods, so it's important to understand how and when the parts of useEffect are executed before you start using it.
+The useEffect hook is one of the most essential hooks you will need to use when working on a modern react app. It allows you to execute code that responds to changes in the state and props of a component and execute necessary actions like fetching data or calling browser APIs. Previously a lot of the code we would have written in React lifecycle methods in class components now goes into a useEffect hook. However, useEffect does not precisely follow the same rules as conventional life cycle methods, so it's important to understand how and when the parts of useEffect are executed before you start using it.
 
 ## A Minimal Viable Example
 
@@ -110,7 +110,7 @@ function App() {
   const [rendered, setRendered] = useState(true);
   return (
     <>
-      <button onClick={e => setRendered(!rendered)}>
+      <button onClick={(e) => setRendered(!rendered)}>
         {rendered ? "UnMount" : "Render"}
       </button>
       {rendered && <ComponentWithEffects />}
@@ -158,7 +158,7 @@ function App() {
   const [rendered, setRendered] = useState(true);
   return (
     <>
-      <button onClick={e => setRendered(!rendered)}>
+      <button onClick={(e) => setRendered(!rendered)}>
         {rendered ? "UnMount" : "Render"}
       </button>
       {rendered && <ComponentWithEffects />}
@@ -187,10 +187,10 @@ const ComponentWithEffects = () => {
     () => {
       console.log("Ran the effect function.");
       fetch("/api.json")
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(results => {
+        .then((results) => {
           console.log(results);
           setTitle(results.page[page].title);
         });
@@ -213,14 +213,14 @@ const ComponentWithEffects = () => {
         type="radio"
         name="page"
         value="home"
-        onClick={e => setPage("home")}
+        onClick={(e) => setPage("home")}
       />
       <label>Home</label>
       <input
         type="radio"
         name="page"
         value="shop"
-        onClick={e => setPage("shop")}
+        onClick={(e) => setPage("shop")}
       />
       <label>Shop</label>
       // highlight-end
@@ -233,7 +233,7 @@ function App() {
   const [rendered, setRendered] = useState(true);
   return (
     <>
-      <button onClick={e => setRendered(!rendered)}>
+      <button onClick={(e) => setRendered(!rendered)}>
         {rendered ? "UnMount" : "Render"}
       </button>
       {rendered && <ComponentWithEffects />}
@@ -265,10 +265,10 @@ const ComponentWithEffects = () => {
     () => {
       console.log("Ran the effect function.");
       fetch("/api.json")
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(results => {
+        .then((results) => {
           console.log(results);
           setTitle(results.page[page].title);
         });
@@ -291,20 +291,20 @@ const ComponentWithEffects = () => {
         type="radio"
         name="page"
         value="home"
-        onClick={e => setPage("home")}
+        onClick={(e) => setPage("home")}
       />
       <label>Home</label>
       <input
         type="radio"
         name="page"
         value="shop"
-        onClick={e => setPage("shop")}
+        onClick={(e) => setPage("shop")}
       />
       <label>Shop</label>
       <div />
       // start-highlight
       <div>
-        <button onClick={e => sethasDuck(!hasDuck)}>Toggle Duck</button>
+        <button onClick={(e) => sethasDuck(!hasDuck)}>Toggle Duck</button>
         {hasDuck && (
           <span role="img" aria-label="duck">
             🦆
@@ -320,7 +320,7 @@ function App() {
   const [rendered, setRendered] = useState(true);
   return (
     <>
-      <button onClick={e => setRendered(!rendered)}>
+      <button onClick={(e) => setRendered(!rendered)}>
         {rendered ? "UnMount" : "Render"}
       </button>
       {rendered && <ComponentWithEffects />}
@@ -353,10 +353,10 @@ const useServerTitle = () => {
     () => {
       console.log("Ran the effect function.");
       fetch("/api.json")
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(results => {
+        .then((results) => {
           console.log(results);
           setTitle(results.page[page].title);
         });
@@ -384,18 +384,18 @@ const ComponentWithEffects = () => {
         type="radio"
         name="page"
         value="home"
-        onClick={e => setPage("home")}
+        onClick={(e) => setPage("home")}
       />
       <label>Home</label>
       <input
         type="radio"
         name="page"
         value="shop"
-        onClick={e => setPage("shop")}
+        onClick={(e) => setPage("shop")}
       />
       <label>Shop</label>
       <div>
-        <button onClick={e => sethasDuck(!hasDuck)}>Toggle Duck</button>
+        <button onClick={(e) => sethasDuck(!hasDuck)}>Toggle Duck</button>
         {hasDuck && (
           <span role="img" aria-label="duck">
             🦆
@@ -410,7 +410,7 @@ function App() {
   const [rendered, setRendered] = useState(true);
   return (
     <>
-      <button onClick={e => setRendered(!rendered)}>
+      <button onClick={(e) => setRendered(!rendered)}>
         {rendered ? "UnMount" : "Render"}
       </button>
       {rendered && <ComponentWithEffects />}
