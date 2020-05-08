@@ -7,9 +7,9 @@ published: true
 author: Stephen Castle
 video: aL32F5Df-rY
 authorimage: /img/contributors/stephen.jpg
-featuredimage: /img/blog-images/node-on-windows.jpg
+featuredimage: /img/blog-images/tree-traversal.jpg
 description: >-
-  Learn how to install NodeJS for the first time to run your first program.
+  How do I traverse a tree in python? Learn about depth first traversal.
 tags:
   - interview problems
   - python
